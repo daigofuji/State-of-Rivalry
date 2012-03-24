@@ -37,14 +37,16 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
-		<h1>State of Rivalry: New York vs. Boston</h1>
+  	<div class="wrap">
+		<?php include 'lib/header.html'; ?>
+	</div>
   </header>
-  <div role="main">
+  <div role="main" class="wrap">
 
 	
 	<?php 
 	//   check if there is a cached version
-//	if ( file_exists('/home/daigo/japaneseballplayers.com/en/lib/cache/active.html') && filemtime('/home/daigo/japaneseballplayers.com/en/lib/cache/active.html') > (time()-86400)) {
+//	if ( file_exists('en/lib/cache/data.html') && filemtime('lib/cache/active.html') > (time()-86400)) {
 //	   //   if there is a cached version read content and display
 //		include  "/home/daigo/japaneseballplayers.com/en/lib/cache/active.html";
 //		} else {
@@ -71,7 +73,8 @@
 	<div>
 	</div>
 	
-	<h2>MATCH UPS</h2>
+	<h2>Filter</h2>
+
 
 	<div>
 		<span class="ny">New York Yankees</span> 
@@ -83,6 +86,9 @@
 
   </div>
   <footer>
+ 	<div class="wrap">
+		<?php include 'lib/footer.html'; ?>
+  	<div class="wrap">
 
   </footer>
 

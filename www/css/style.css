@@ -219,8 +219,9 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+body {text-align: center;}
+.wrap {max-width:1000px; margin:0 auto; text-align: left;}
 
-.all-timescore {}
 
 /* colors */
 .main-bg { background-color: #f2f2f2; }
@@ -240,11 +241,14 @@ td { vertical-align: top; }
 .bos.num {color:#fab31b;}
 
 .tie.num, .num, .tie {color: #939598;}
-h1, h2 {font-family: 'Balthazar', serif; font-weight:normal;}
+h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .4em;}
 
-.num {font-family: 'Six Caps', sans-serif; font-size:300%;}
+.num {font-family: 'Six Caps', sans-serif; font-size:400%;}
 
 
+#alltime-score { overflow:hidden; }
+#alltime-score dl {float:left; width: 31%; margin-right:2%;}
+#alltime-score dl dd {margin-top:-20px;}
 
 
 
@@ -263,6 +267,10 @@ h1, h2 {font-family: 'Balthazar', serif; font-weight:normal;}
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
+  
+	.num {font-size:800%;}
+  	
+  
 }
 
 
