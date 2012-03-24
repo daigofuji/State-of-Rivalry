@@ -251,13 +251,20 @@ h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .4em
 #alltime-score dl dd {margin-top:-20px;}
 
 
+.games {padding-top: 10px; }
+
+.game { float:left; width: 70px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff;}
+.gamedate {font-size:.9em; color:grey; letter-spacing:-1px;}
+.boswin { border: #d55a1f 1px solid;}
+.nywin { border: #4b99a6 1px solid; }
 
 
 
 
 
+header .wrap {text-align:center;}
 
-
+#logo {margin: 0 auto;}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

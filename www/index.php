@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -59,8 +60,8 @@
 	</div>
 	
 	<h2>Filter</h2>
+	<div>
 	<form>
-	
 		Runs:
 		<select name="score_margin">
 		  <option value="-">All</option>
@@ -73,11 +74,10 @@
 		  <option value="-">Both</option>
 		  <option value="BAL">BAL</option>
 		  <option value="TAM">TAM</option>
-
-		  <!--
-<option value="NYY">At New York</option>
-		  <option value="BOS">At Boston</option>
--->
+			<!--
+			<option value="NYY">At New York</option>
+			<option value="BOS">At Boston</option>
+			-->
 		</select>
 		Day/Night:
 		<select name="day_or_night">
@@ -85,16 +85,33 @@
 		  <option value="d">Day game</option>
 		  <option value="n">Night game</option>
 		</select>
-	
+		<!-- 
+		Extra innings:
+		<select>
+		  <option value="homeall">Both</option>
+		  <option value="homeny">9-inning game</option>
+		  <option value="homebos">Extra innings</option>
+		</select>
+		-->	
 	</form>
-	<!-- 
-	Extra innings:
-	<select>
-	  <option value="homeall">Both</option>
-	  <option value="homeny">9-inning game</option>
-	  <option value="homebos">Extra innings</option>
-	</select>
-	-->
+	</div>
+	<div class="games">
+		<div class="game boswin"> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		
+		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+	
+		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		
+		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		
+		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		
+		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>	
+	</div>
+	
+	
+	
+	
 	
 	
 
