@@ -19,6 +19,12 @@ $(document).ready(function() {
         var source = $("#source");
         source.val($(this).find("span.value").html())
     });
+    
+    $("select").each(function() {
+    	
+    	createDropDown($(this))
+    
+    });
 });
 
 function onDropDownChange() {
@@ -26,8 +32,7 @@ function onDropDownChange() {
 
 }
 
-function createDropDown(){
-    var source = $("#source");
+function createDropDown(source){
     var selected = source.find("option[selected]");
     var options = $("option", source);
     
