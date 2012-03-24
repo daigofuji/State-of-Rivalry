@@ -28,7 +28,7 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -37,7 +37,7 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
-		<h1>State of Rivalry: </h1>
+		<h1>State of Rivalry: New York vs. Boston</h1>
   </header>
   <div role="main">
 
@@ -51,19 +51,19 @@
 //		include "/home/daigo/japaneseballplayers.com/en/lib/get_active_players.php";
 //		}
 	?>
-	
-	<div>	
+	<h2>All time score</h2>
+	<div id="alltime-score">	
 		<dl>
-			<dt>New York</dt>
-			<dd></dd>
+			<dt class="ny">New York</dt>
+			<dd class="num ny">1,114</dd>
 		</dl>
 		<dl>
-			<dt>Boston</dt>
-			<dd></dd>
+			<dt class="bos">Boston</dt>
+			<dd class="num bos">918</dd>
 		</dl>
 		<dl>
-			<dt>Tie</dt>
-			<dd></dd>
+			<dt class="tie">Tie</dt>
+			<dd class="num tie">14</dd>
 		</dl>	
 	</div>
 
@@ -71,8 +71,15 @@
 	<div>
 	</div>
 	
-	
+	<h2>MATCH UPS</h2>
 
+	<div>
+		<span class="ny">New York Yankees</span> 
+		vs. 
+		<span class="bos">Boston Red Sox</span>
+		
+	</div>
+	
 
   </div>
   <footer>
