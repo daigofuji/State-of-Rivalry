@@ -28,6 +28,7 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/libs/dropdown.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
 
 
@@ -75,13 +76,32 @@
 	
 	<h2>Filter</h2>
 
-
-	<div>
-		<span class="ny">New York Yankees</span> 
-		vs. 
-		<span class="bos">Boston Red Sox</span>
-		
-	</div>
+	Runs:
+	<select>
+	  <option value="runall">All</option>
+	  <option value="run0">Shutouts</option>
+	  <option value="run1">One-run game</option>
+	  <option value="run5">Blowouts (5 runs)</option>
+	</select>
+	Home team:
+	<select>
+	  <option value="homeall">Both</option>
+	  <option value="homeny">At New York</option>
+	  <option value="homebos">At Boston</option>
+	</select>
+	Day/Night:
+	<select>
+	  <option value="dnall">Both</option>
+	  <option value="dnday">Day game</option>
+	  <option value="dnnight">Night game</option>
+	</select>
+	Extra innings:
+	<select>
+	  <option value="homeall">Both</option>
+	  <option value="homeny">9-inning game</option>
+	  <option value="homebos">Extra innings</option>
+	</select>
+	
 	
 
   </div>
