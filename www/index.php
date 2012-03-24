@@ -38,15 +38,6 @@
   <div role="main" class="wrap">
 
 	
-	<?php 
-	//   check if there is a cached version
-//	if ( file_exists('en/lib/cache/data.html') && filemtime('lib/cache/active.html') > (time()-86400)) {
-//	   //   if there is a cached version read content and display
-//		include  "/home/daigo/japaneseballplayers.com/en/lib/cache/active.html";
-//		} else {
-//		include "/home/daigo/japaneseballplayers.com/en/lib/get_active_players.php";
-//		}
-	?>
 	<h2>All time score</h2>
 	<div id="alltime-score">	
 		<dl>
