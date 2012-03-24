@@ -1,68 +1,3 @@
-var countries_data = {
-   "properties": {
-    "name": {"type": "string", "unique": true },
-    "official_language": {"name": "Official Language", "type": "string", "unique": true },
-    "population": { "name": "Population", "type": "number", "unique": true }
-  }, /**/
-  "items": {
-    "austria": {
-      "name": "Austria",
-      "official_language": "German",
-      "population": 8356700,
-    },
-    "ger": {
-      "name": "Germany",
-      "official_language": "German",
-      "population": 82062200,
-    },
-    "usa": {
-      "name": "United States of America",
-      "official_language": "English",
-      "population": 310955497,
-    }
-  }
-}
-
-var countries = new Data.Collection(countries_data);
-
-console.log(countries.find({ "name": "Austria" }).length);
-
-var population = countries.properties().get('population');
-console.log(population.aggregate(Data.Aggregators.COUNT)); 
-
-var languages = countries.group(["official_language"], {
-  "population": {aggregator: Data.Aggregators.SUM, name: "Total Population"}
-});
-
-
-var game_data = {
-	"properties": {
-		"winner": { "type": "string", "unique": true },
-		"shutout": { "type": "boolean", "unique": true }
-	},
-	"items": {
-		"1": { 
-			"winner": "Yankees",
-			"shutout": false
-		},
-		"2": { 
-			"winner": "Red Sox",
-			"shutout": true
-		},
-		"3": { 
-			"winner": "Red Sox",
-			"shutout": true
-		},
-		"4": { 
-			"winner": "Red Sox",
-			"shutout": false
-		}
-	}
-}
-
-var games = new Data.Collection(game_data);
-
-var winners = games.group(["winner"]/* , { winner: {aggregator: Data.Aggregators.COUNT, name: "Number of wins"}}  */);
 
 
 var rivalry = {};
@@ -76,12 +11,14 @@ rivalry.Matchup = Backbone.Model.extend({
 	}, 
 	
 	initialize: function() {
-	
+		
+		_.bindAll(this);
 	
 	
 	},
 	
 	count: function(conditions) {
+		
 		
 		return this.get("games").filter(conditions).items().length;
 		
@@ -103,23 +40,27 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 		
 		// $.get("", this.onData);
 		
-		this.onData()
+		this.onData({
+			1: { "winner": "Yankees", shutout: true, time: "day" },
+			2: { "winner": "Yankees", shutout: true, time: "night" },
+			3: { "winner": "Yankees", shutout: false, time: "day" },
+			4: { "winner": "Red Sox", shutout: false, time: "day" },
+			5: { "winner": "Red Sox", shutout: false, time: "night" },
+			6: { "winner": "Red Sox", shutout: true, time: "night" }
+		})
 		
 	},
 	
 	onData: function(data) {
 		
+		
 		var game_data = {
 			properties: {
-				"": { "type": "", "unique": true },
-				"": { "type": "", "unique": true },
-				"": { "type": "", "unique": true },
-				"": { "type": "", "unique": true },
-				"": { "type": "", "unique": true }, 
-				"": { "type": "", "unique": true },
-				"": { "type": "", "unique": true }			
+				"winner": { "type": "string", "unique": true },
+				"shutout": { "type": "string", "unique": true },
+				"time": { "type": "string", "unique": true }		
 			},
-			items: []
+			items: data
 		};
 		
 		this.model.set("games", new Data.Collection(game_data));
@@ -127,8 +68,10 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 	},
 	
 	render: function() {
+	
+		console.log(this.summarize({}));
 		
-		_.fill(this.summarize());
+		_.fill(this.summarize({}));
 		
 	},
 	
@@ -143,26 +86,17 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 	
 	summarize: function(conditions) {
 		
+		/* this.model.get("").filter().group(["official_language"], {
+		  "population": {aggregator: Data.Aggregators.COUNT }
+		}); */
+		
 		return {
-			".yankees": this.model.count(_.safe_extend(conditions, { "winners": "Yankees" })),
-			".redsox": this.model.count(_.safe_extend(conditions, { "winners": "Red Sox" })),
+			".yankees": this.model.count(_.safe_extend(conditions, { "winner": "Yankees" })),
+			".redsox": this.model.count(_.safe_extend(conditions, { "winner": "Red Sox" })),
 			".total": this.model.count(_.safe_extend(conditions))
 		};
 		
 	},
-	
-	
-	fill: function(elements) {
-	
-		_.each(elements, function(html, target) {
-			$(target).html(html);
-		});
-	
-	},
-	
-	rekey: function() {
-	
-	}
 
 });
 
