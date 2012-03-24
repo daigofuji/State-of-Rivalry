@@ -241,9 +241,9 @@ body {text-align: center;}
 .bos.num {color:#fab31b;}
 
 .tie.num, .num, .tie {color: #939598;}
-h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2em;  text-shadow: 0px -2px 0px #fff;}
+h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .4em;}
 
-.num {font-family: 'Six Caps', sans-serif; font-size:500%; text-shadow: 0px -2px 0px #fff;}
+.num {font-family: 'Six Caps', sans-serif; font-size:400%;}
 
 
 #alltime-score { overflow:hidden; }
@@ -253,16 +253,9 @@ h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2em
 
 
 
-footer {
-	margin-top:10em; 
-	font-size: .8em;
-	background: #ac897d;
-	color: #fff;
-	min-height: 200px; 
-	padding:2em 0;
-}
-footer .wrap {text-align:right;}
-footer a:link, footer a:active, footer a:visited  { color:#fff; text-decoration: underline; }
+
+
+
 
 
 
@@ -275,7 +268,7 @@ footer a:link, footer a:active, footer a:visited  { color:#fff; text-decoration:
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
   
-	.num {font-size:900%;}
+	.num {font-size:800%;}
   	
   
 }
