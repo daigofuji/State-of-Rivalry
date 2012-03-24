@@ -107,7 +107,9 @@
 		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
 		
 		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>	
-	</div>
+		
+		
+	</div><!-- games -->
 	
 	
 	
@@ -116,10 +118,12 @@
 	
 
   </div>
+
+
   <footer>
  	<div class="wrap">
 		<?php include 'lib/footer.html'; ?>
-  	<div class="wrap">
+  	</div>
 
   </footer>
 
