@@ -1,0 +1,8208 @@
+<script type="text/javascript" src="http://cache.boston.com//multimedia/graphics/table/picnet.table.filter.min.js"></script>	
+
+  <script type="text/javascript">
+  		// using awesome code from PicNet Table filter http://www.picnet.com.au/picnet_table_filter.html
+  
+        $(document).ready(function() {
+            // Initialise Plugin
+            var options1 = {
+                additionalFilterTriggers: [$('#only2010'), $('#only2009'), $('#quickfind')],
+                clearFiltersControls: [$('#cleanfilters')],
+                matchingRow: function(state, tr, textTokens) {
+                    if (!state || !state.id) { return true; }					
+					var val =  tr.children('td:eq(0)').text();
+					switch (state.id) {
+						case 'only2010': return state.value !== 'true' || val === '2010';
+						case 'only2009': return state.value !== 'true' || val === '2009';
+						default: return true;
+					}
+                }, 
+                filteredRows: function(filterStates) {
+                setRowCount();
+                }
+            };
+			function setRowCount() {
+				var rowcount =  $('#dltable').find('tbody tr:not(:hidden)').length;
+				$('#rowcount').text(rowcount);
+			}
+			
+            $('#dltable').tableFilter(options1);
+			setRowCount();
+        });
+    </script>
+
+
+<div class="filterpanel">
+	<div class="numrec">Showing <span id='rowcount'></span> records</div>
+    Only Show 2010: <input type="checkbox" id="only2010"/>        	
+	Only Show 2009: <input type="checkbox" id="only2009"/>
+	<br/>    
+	Quick Find: <input type="text" id="quickfind" title="Quotes (&quot;) match phrases. (not) excludes a match from the results. (or) can be used to do Or searches. I.e. [red or blue] will match either red or blue. Numeric values support &gt;=, &gt;, &lt;=, &lt;, = and != operators.">
+	<a id="cleanfilters" href="#">Clear Filters</a>
+</div>	
+	
+	<!-- ## CSS FOR GRAPHICS ## -->
+	<style type="text/css">
+	table, td, th {	border: solid 1px silver; color:#333; padding:3px 5px 3px 5px}
+	th { background-color:#3f5f9c; color:#fff;  padding:3px 0;}
+	a {	color:gray; }
+	.filtering { background-color:light-gray}
+	.filterpanel { text-align: left; padding:5px; line-height:2em; }
+	#quickfind {width: 480px; border: 1px solid #CCC;}
+	#cleanfilters { margin-left: 30px;}
+	.numrec { float:right; width:260px; font-size:2em; font-family:'Georgia', serif; color:#3f5f9c; text-align:right;}
+	#rowcount { font-weight:bold; }
+	
+	</style> 
+	
+<table style="border-collapse: collapse; table-layout: fixed;" border="0" cellpadding="0" cellspacing="0" style="width:959px" id="dltable">
+
+<tr>
+<thead>
+  <th style="width:40px;" filter='false'>Yr.</th>
+  <th style="width:120px;">Player</th>
+  <th style="width:85px;" filter='false'>Date</th>
+  <th style="width:154px;" filter-type='ddl'>Team</th>
+  <th style="width:40px;" filter='false'>Type</th>
+  <th style="width:350px;">Injury</th>
+  <th style="width:120px;" filter-type='ddl'>Group</th>
+ </tr>
+</thead>
+ <tbody>
+ <tr>
+  <td>2010</td>
+  <td>Alexi Ogando</td>
+  <td>2010-11-01</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mark Teixeira</td>
+  <td>2010-10-20</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Billy Wagner</td>
+  <td>2010-10-10</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rocco Baldelli</td>
+  <td>2010-10-07</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Leg fatigue</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tyler Colvin</td>
+  <td>2010-09-20</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Punctured chest</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon Hicks</td>
+  <td>2010-09-20</td>
+  <td>Atlanta Braves</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Geovany Soto</td>
+  <td>2010-09-19</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Recovering from right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rommie Lewis</td>
+  <td>2010-09-15</td>
+  <td>Toronto Blue Jays</td>
+  <td>60-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aaron Cook</td>
+  <td>2010-09-09</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Fractured right fibula</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Mathieson</td>
+  <td>2010-09-06</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Latissimus dorsi strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Kendall</td>
+  <td>2010-09-03</td>
+  <td>Kansas City Royals</td>
+  <td>60-Day</td>
+  <td>Right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Omar Beltre</td>
+  <td>2010-09-03</td>
+  <td>Texas Rangers</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Donnie Murphy</td>
+  <td>2010-09-02</td>
+  <td>Florida Marlins</td>
+  <td>60-Day</td>
+  <td>Dislocated right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Lobaton</td>
+  <td>2010-08-31</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Craig Gentry</td>
+  <td>2010-08-30</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edwin Encarnacion</td>
+  <td>2010-08-29</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Sprained left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ricky Nolasco</td>
+  <td>2010-08-29</td>
+  <td>Florida Marlins</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Erick Threets</td>
+  <td>2010-08-28</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Torn ulnar collateral ligament in left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Frank Francisco</td>
+  <td>2010-08-28</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained right latissimus dorsi muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kanekoa Texeira</td>
+  <td>2010-08-28</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jerry Hairston</td>
+  <td>2010-08-28</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Right elbow sprain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ian Stewart</td>
+  <td>2010-08-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Strained right oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Laynce Nix</td>
+  <td>2010-08-26</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Manuel Corpas</td>
+  <td>2010-08-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Leake</td>
+  <td>2010-08-25</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Right shoulder fatigue</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.J. Putz</td>
+  <td>2010-08-25</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Right knee patella tendinitis</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Danys Baez</td>
+  <td>2010-08-25</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jim Edmonds</td>
+  <td>2010-08-24</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained right oblique muscle</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ross Ohlendorf</td>
+  <td>2010-08-24</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Strain in the back of his right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Guillermo Mota</td>
+  <td>2010-08-23</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Iliotibial band syndrome in left leg</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Travis Schlichting</td>
+  <td>2010-08-22</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Soreness in right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kevin Slowey</td>
+  <td>2010-08-22</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right triceps strain</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ron Mahay</td>
+  <td>2010-08-22</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Maicer Izturis</td>
+  <td>2010-08-22</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Stephen Strasburg</td>
+  <td>2010-08-22</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Rght forearm flexor strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Feldman</td>
+  <td>2010-08-22</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Bone bruise in right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alex Rodriguez</td>
+  <td>2010-08-21</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Clement</td>
+  <td>2010-08-21</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Sore left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Conor Jackson</td>
+  <td>2010-08-20</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Lower abdominal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nick Punto</td>
+  <td>2010-08-20</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dustin Pedroia</td>
+  <td>2010-08-20</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Soreness in left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Maicer Izturis</td>
+  <td>2010-08-20</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ross Gload</td>
+  <td>2010-08-19</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tony Gwynn</td>
+  <td>2010-08-19</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Fractured hamate bone in right hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Troy Glaus</td>
+  <td>2010-08-18</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Sore left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Ray</td>
+  <td>2010-08-18</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Right intercostal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Thornton</td>
+  <td>2010-08-18</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric Patterson</td>
+  <td>2010-08-17</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained neck</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Guillen</td>
+  <td>2010-08-17</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Left knee contusion</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Keppinger</td>
+  <td>2010-08-17</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Fractured left big toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Lindstrom</td>
+  <td>2010-08-17</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Back problems</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Lance Berkman</td>
+  <td>2010-08-16</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Sprained right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Willingham</td>
+  <td>2010-08-16</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left knee medial meniscus tear</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dennys Reyes</td>
+  <td>2010-08-16</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Left elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jarrod Saltalamacchia</td>
+  <td>2010-08-16</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Infection in his lower right leg</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Vicente Padilla</td>
+  <td>2010-08-16</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Bulging disk in his neck</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric Patterson</td>
+  <td>2010-08-16</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nelson Cruz</td>
+  <td>2010-08-15</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Gabe Kapler</td>
+  <td>2010-08-15</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Sprained right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Sean West</td>
+  <td>2010-08-15</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Inflammation in right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Cristian Guzman</td>
+  <td>2010-08-14</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right quadriceps strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jacoby Ellsbury</td>
+  <td>2010-08-14</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Rib injury</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Taylor Buchholz</td>
+  <td>2010-08-14</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Lower back stiffness</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David Purcey</td>
+  <td>2010-08-13</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Strained ligaments in his right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Berken</td>
+  <td>2010-08-13</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Adam Rosales</td>
+  <td>2010-08-12</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Stress fracture in his right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Mijares</td>
+  <td>2010-08-12</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Francis</td>
+  <td>2010-08-12</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Soreness in his left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edgar Renteria</td>
+  <td>2010-08-11</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left biceps strain</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chipper Jones</td>
+  <td>2010-08-11</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Torn acl in his left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>LaTroy Hawkins</td>
+  <td>2010-08-11</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kevin Cash</td>
+  <td>2010-08-09</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rich Harden</td>
+  <td>2010-08-08</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Bannister</td>
+  <td>2010-08-08</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right rotator cuff tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Watson</td>
+  <td>2010-08-08</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Kidney stones</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jack Wilson</td>
+  <td>2010-08-08</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Fractured right hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Geovany Soto</td>
+  <td>2010-08-07</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Sprained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rich Thompson</td>
+  <td>2010-08-07</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Right shoulder stiffness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Wade Davis</td>
+  <td>2010-08-06</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jesse Litsch</td>
+  <td>2010-08-06</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Right hip labral tear</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Hideki Okajima</td>
+  <td>2010-08-06</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Buck</td>
+  <td>2010-08-05</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Lacerated right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Russ Springer</td>
+  <td>2010-08-05</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained left hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David Hernandez</td>
+  <td>2010-08-05</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kris Medlen</td>
+  <td>2010-08-05</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Injury to the ulnar collateral ligament in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rich Thompson</td>
+  <td>2010-08-05</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aaron Cook</td>
+  <td>2010-08-04</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Sprained right big toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nyjer Morgan</td>
+  <td>2010-08-04</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Sore right hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Niemann</td>
+  <td>2010-08-04</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Russell Martin</td>
+  <td>2010-08-04</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Right hip labral tear</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason LaRue</td>
+  <td>2010-08-04</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Danny Worth</td>
+  <td>2010-08-04</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Bruised left heel</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Santana</td>
+  <td>2010-08-03</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Left knee sprain</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Weaver</td>
+  <td>2010-08-03</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Left Knee Soreness</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Orlando Cabrera</td>
+  <td>2010-08-03</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kevin Youkilis</td>
+  <td>2010-08-03</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Right thumb adductor muscle tear</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Juan Gutierrez</td>
+  <td>2010-08-03</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflamation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Gomez</td>
+  <td>2010-08-03</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rafael Furcal</td>
+  <td>2010-08-03</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Motte</td>
+  <td>2010-08-03</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Ac sprain of right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Howard</td>
+  <td>2010-08-02</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Moderate left ankle sprain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jesse Litsch</td>
+  <td>2010-08-02</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Silva</td>
+  <td>2010-08-02</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tyler Greene</td>
+  <td>2010-08-01</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right hand contusion</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Suppan</td>
+  <td>2010-08-01</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right groin soreness</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Pena</td>
+  <td>2010-08-01</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Plantar fasciitis in right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Erick Threets</td>
+  <td>2010-07-31</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Turf toe in his left big toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joaquin Arias</td>
+  <td>2010-07-31</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained back muscle</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Cameron</td>
+  <td>2010-07-31</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained abdominal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Martin Prado</td>
+  <td>2010-07-31</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Fractured right pinky finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Robinson Tejeda</td>
+  <td>2010-07-30</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right biceps tendon strain</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mitch Talbot</td>
+  <td>2010-07-30</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nick Punto</td>
+  <td>2010-07-29</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon McCarthy</td>
+  <td>2010-07-29</td>
+  <td>Texas Rangers</td>
+  <td>60-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Travis Hafner</td>
+  <td>2010-07-29</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Grant Balfour</td>
+  <td>2010-07-29</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Rib strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Rowland-Smith</td>
+  <td>2010-07-28</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ian Kinsler</td>
+  <td>2010-07-28</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Shane Victorino</td>
+  <td>2010-07-28</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Abdominal strain on his left side</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Milton Bradley</td>
+  <td>2010-07-27</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right knee tendinitis</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joel Pineiro</td>
+  <td>2010-07-26</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Coghlan</td>
+  <td>2010-07-26</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left knee injury</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Bay</td>
+  <td>2010-07-26</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.D. Martin</td>
+  <td>2010-07-25</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Guillen</td>
+  <td>2010-07-25</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rod Barajas</td>
+  <td>2010-07-25</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jhan Marinez</td>
+  <td>2010-07-25</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eugenio Velez</td>
+  <td>2010-07-25</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Head contusion and concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Magglio Ordonez</td>
+  <td>2010-07-25</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Fractured right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Treanor</td>
+  <td>2010-07-24</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Sprained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Orlando Hudson</td>
+  <td>2010-07-24</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David DeJesus</td>
+  <td>2010-07-23</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Torn ulnar collateral ligament in right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andy Sonnanstine</td>
+  <td>2010-07-23</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Stephen Strasburg</td>
+  <td>2010-07-22</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Doumit</td>
+  <td>2010-07-22</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brett Hayes</td>
+  <td>2010-07-21</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left wrist contusion</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jamie Moyer</td>
+  <td>2010-07-21</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Sprained left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andrew Bailey</td>
+  <td>2010-07-21</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Right intercostal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David Eckstein</td>
+  <td>2010-07-21</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Right calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeremy Affeldt</td>
+  <td>2010-07-21</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Luis Atilano</td>
+  <td>2010-07-21</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Bone chips in the right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jamie Moyer</td>
+  <td>2010-07-21</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ben Sheets</td>
+  <td>2010-07-20</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dustin Nippert</td>
+  <td>2010-07-20</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Mild head injury</td>
+  <td>Head/Face</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon Inge</td>
+  <td>2010-07-20</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Fracture in his left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andy Pettitte</td>
+  <td>2010-07-19</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Left groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Manny Ramirez</td>
+  <td>2010-07-17</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Right calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric O'Flaherty</td>
+  <td>2010-07-15</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Viral infection</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Adams</td>
+  <td>2010-07-12</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nick Stavinoha</td>
+  <td>2010-07-12</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kerry Wood</td>
+  <td>2010-07-12</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Blister on right index finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Kazmir</td>
+  <td>2010-07-11</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Wieters</td>
+  <td>2010-07-10</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Doug Davis</td>
+  <td>2010-07-10</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric O'Flaherty</td>
+  <td>2010-07-10</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mat Latos</td>
+  <td>2010-07-09</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Reed Johnson</td>
+  <td>2010-07-09</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Sore lower back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dan Runzler</td>
+  <td>2010-07-09</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Dislocated left patella</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Damaso Marte</td>
+  <td>2010-07-08</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Sore left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Justin Morneau</td>
+  <td>2010-07-08</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jake Peavy</td>
+  <td>2010-07-07</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Detached right shoulder muscle</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kevin Millwood</td>
+  <td>2010-07-06</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Todd Helton</td>
+  <td>2010-07-05</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Sore back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Fernando Tatis</td>
+  <td>2010-07-05</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right shoulder ac joint sprain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Yovani Gallardo</td>
+  <td>2010-07-05</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ramon Hernandez</td>
+  <td>2010-07-05</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Inflammation in left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Adam Ottavino</td>
+  <td>2010-07-04</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right shoulder sprain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Shin-Soo Choo</td>
+  <td>2010-07-03</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Sprained right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Schlitter</td>
+  <td>2010-07-03</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right shoulder impingement</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Shaun Marcum</td>
+  <td>2010-07-02</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Will Venable</td>
+  <td>2010-07-02</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Geoff Blum</td>
+  <td>2010-07-02</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Loose bodies in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Varitek</td>
+  <td>2010-07-02</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Broken left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Luke Scott</td>
+  <td>2010-07-01</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Conor Jackson</td>
+  <td>2010-07-01</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Manny Delcarmen</td>
+  <td>2010-07-01</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aaron Harang</td>
+  <td>2010-07-01</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Lower back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Tolbert</td>
+  <td>2010-07-01</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Contusion on right middle finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Varitek</td>
+  <td>2010-07-01</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Manny Ramirez</td>
+  <td>2010-06-30</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Grabow</td>
+  <td>2010-06-29</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Left knee sprain</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Fulchino</td>
+  <td>2010-06-29</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Tendinitis in right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chase Utley</td>
+  <td>2010-06-29</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Sprained ulnar collateral ligament of the right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joel Zumaya</td>
+  <td>2010-06-29</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Injured right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Victor Martinez</td>
+  <td>2010-06-28</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Fractured bone in his left thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David Freese</td>
+  <td>2010-06-28</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Bone bruise to his right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Clay Buchholz</td>
+  <td>2010-06-27</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Heyward</td>
+  <td>2010-06-27</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Bone bruise in left thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Placido Polanco</td>
+  <td>2010-06-26</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Sweeney</td>
+  <td>2010-06-26</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Ludwick</td>
+  <td>2010-06-26</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chad Durbin</td>
+  <td>2010-06-24</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dallas Braden</td>
+  <td>2010-06-23</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Left elbow stiffness</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Lowell</td>
+  <td>2010-06-23</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Strained right hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tommy Manzella</td>
+  <td>2010-06-23</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Fractured left index finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Lou Montanez</td>
+  <td>2010-06-21</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Felipe Paulino</td>
+  <td>2010-06-21</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tyler Walker</td>
+  <td>2010-06-20</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Inflammation in his right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Monasterios</td>
+  <td>2010-06-19</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Blister on his index finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Troy Tulowitzki</td>
+  <td>2010-06-18</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Fractured left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Zach Duke</td>
+  <td>2010-06-17</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Sore left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Maicer Izturis</td>
+  <td>2010-06-16</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Shawn Kelley</td>
+  <td>2010-06-16</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Rght elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Antonio Bastardo</td>
+  <td>2010-06-16</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left elbow ulnar neuritis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Marcus Thames</td>
+  <td>2010-06-13</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chad Billingsley</td>
+  <td>2010-06-13</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Groin injury</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rich Harden</td>
+  <td>2010-06-12</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left gluteal muscle strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Gabe Kapler</td>
+  <td>2010-06-12</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Strained right hip flexor</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Luke Hochevar</td>
+  <td>2010-06-12</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Clay Hensley</td>
+  <td>2010-06-12</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left neck strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chad Billingsley</td>
+  <td>2010-06-12</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Bulger</td>
+  <td>2010-06-11</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Daley</td>
+  <td>2010-06-11</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Todd Wellemeyer</td>
+  <td>2010-06-11</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Right quad injury</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeremy Hermida</td>
+  <td>2010-06-10</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Fractured ribs</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nate McLouth</td>
+  <td>2010-06-10</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Concussion-like symptoms</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Daisuke Matsuzaka</td>
+  <td>2010-06-08</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Right forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aramis Ramirez</td>
+  <td>2010-06-08</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Bruised left thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Stairs</td>
+  <td>2010-06-07</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Perry</td>
+  <td>2010-06-07</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Right biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.J. Hardy</td>
+  <td>2010-06-07</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Bone bruise in his left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Charlie Haeger</td>
+  <td>2010-06-06</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Sergio Mitre</td>
+  <td>2010-06-05</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Takashi Saito</td>
+  <td>2010-06-04</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brett Anderson</td>
+  <td>2010-06-04</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Maldonado</td>
+  <td>2010-06-04</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left thumb fracture</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brett Anderson</td>
+  <td>2010-06-04</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Sweeney</td>
+  <td>2010-06-03</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Lower back inflammation</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Sweeney</td>
+  <td>2010-06-03</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Lower back inflammation</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Luis Castillo</td>
+  <td>2010-06-02</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Bruised right heel</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Sampson</td>
+  <td>2010-06-01</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Tendinitis in his right rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Lincoln</td>
+  <td>2010-06-01</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained muscle in his right side</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Doug Fister</td>
+  <td>2010-06-01</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right shoulder fatigue</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Oliver Perez</td>
+  <td>2010-06-01</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Patella tendinitis of right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alexi Casilla</td>
+  <td>2010-06-01</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Bone spur in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Grabow</td>
+  <td>2010-05-31</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Left knee sprain</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Rohlinger</td>
+  <td>2010-05-31</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Orlando Hudson</td>
+  <td>2010-05-31</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Sprained left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mark Teahen</td>
+  <td>2010-05-31</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Fractured right middle finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Bartlett</td>
+  <td>2010-05-30</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Todd Coffey</td>
+  <td>2010-05-30</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Bruised right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kendrys Morales</td>
+  <td>2010-05-30</td>
+  <td>Los Angeles Angels</td>
+  <td>60-Day</td>
+  <td>Broken lower left leg</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nelson Cruz</td>
+  <td>2010-05-29</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Hanigan</td>
+  <td>2010-05-29</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Broken left thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Charlie Morton</td>
+  <td>2010-05-28</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Right shoulder fatigue</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jim Johnson</td>
+  <td>2010-05-28</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Renyel Pinto</td>
+  <td>2010-05-27</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left hip strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Bard</td>
+  <td>2010-05-27</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Bard</td>
+  <td>2010-05-27</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edgar Renteria</td>
+  <td>2010-05-26</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Steve Pearce</td>
+  <td>2010-05-25</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Sprained right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jacoby Ellsbury</td>
+  <td>2010-05-25</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Left chest contusion</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Everth Cabrera</td>
+  <td>2010-05-24</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Everth Cabrera</td>
+  <td>2010-05-24</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>George Sherrill</td>
+  <td>2010-05-24</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Stiff middle back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brent Clevlen</td>
+  <td>2010-05-24</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Sprianed right toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Homer Bailey</td>
+  <td>2010-05-24</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tony Abreu</td>
+  <td>2010-05-24</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Left wrist sprain</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alfredo Simon</td>
+  <td>2010-05-24</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon Wood</td>
+  <td>2010-05-24</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Hip flexor strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Bud Norris</td>
+  <td>2010-05-24</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Bursitis and biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Coco Crisp</td>
+  <td>2010-05-23</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right intercostal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Coco Crisp</td>
+  <td>2010-05-23</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right intercostal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kyle Lohse</td>
+  <td>2010-05-23</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jody Gerut</td>
+  <td>2010-05-23</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Bruised left heel</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ivan Rodriguez</td>
+  <td>2010-05-23</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Olsen</td>
+  <td>2010-05-22</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left shoulder tightness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brad Penny</td>
+  <td>2010-05-22</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Strained right latissimus</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jimmy Rollins</td>
+  <td>2010-05-22</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Maine</td>
+  <td>2010-05-21</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right shoulder weakness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Gregg Zaun</td>
+  <td>2010-05-21</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric Chavez</td>
+  <td>2010-05-21</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Neck spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon Medders</td>
+  <td>2010-05-20</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Right knee inflammation</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Koji Uehara</td>
+  <td>2010-05-20</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Esmailin Caridad</td>
+  <td>2010-05-19</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kyle Blanks</td>
+  <td>2010-05-18</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Leroux</td>
+  <td>2010-05-18</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jack Taschner</td>
+  <td>2010-05-18</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Left hamstring tightness</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Asdrubal Cabrera</td>
+  <td>2010-05-18</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Fractured left forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mark DeRosa</td>
+  <td>2010-05-17</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left Wrist Injury</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jon Niese</td>
+  <td>2010-05-17</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Mild strain of his right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jorge Posada</td>
+  <td>2010-05-17</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Hairline fracture in his right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Grady Sizemore</td>
+  <td>2010-05-17</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Bone bruise on his left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Justin Duchscherer</td>
+  <td>2010-05-16</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Left hip soreness</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jim Edmonds</td>
+  <td>2010-05-16</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Hairston</td>
+  <td>2010-05-16</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric Young</td>
+  <td>2010-05-15</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Stress fracture in his lower right leg</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Travis Snider</td>
+  <td>2010-05-15</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Sprained right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andy Marte</td>
+  <td>2010-05-15</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Non baseball medical issue</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Diaz</td>
+  <td>2010-05-15</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Infected right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andre Ethier</td>
+  <td>2010-05-15</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Fractured right pinky finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Baker</td>
+  <td>2010-05-13</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right flexor muscle strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Andy Marte</td>
+  <td>2010-05-12</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Doug Davis</td>
+  <td>2010-05-11</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Pericarditis</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Stokes</td>
+  <td>2010-05-10</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Right shoulder fatigue</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brad Lidge</td>
+  <td>2010-05-10</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tim Stauffer</td>
+  <td>2010-05-10</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Appendicitis</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Schneider</td>
+  <td>2010-05-09</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left Achilles' strain</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Charlie Haeger</td>
+  <td>2010-05-09</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Plantar fasciitis in right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alfredo Aceves</td>
+  <td>2010-05-09</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Bulging disk in his lower back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nick Johnson</td>
+  <td>2010-05-08</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Inflamed tendon in his right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>LaTroy Hawkins</td>
+  <td>2010-05-07</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Weakness in his right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edgar Renteria</td>
+  <td>2010-05-07</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Harrison</td>
+  <td>2010-05-07</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Franklin Morales</td>
+  <td>2010-05-06</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Weakness in his left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Gomez</td>
+  <td>2010-05-06</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Strained left rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Maicer Izturis</td>
+  <td>2010-05-06</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jack Wilson</td>
+  <td>2010-05-06</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.J. Hardy</td>
+  <td>2010-05-05</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Left wrist contusion</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Sean Gallagher</td>
+  <td>2010-05-04</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Sprained toe on his left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tim Byrdak</td>
+  <td>2010-05-04</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rick Ankiel</td>
+  <td>2010-05-03</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right quad strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mark Lowe</td>
+  <td>2010-05-03</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Lower back disc inflammation</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Curtis Granderson</td>
+  <td>2010-05-02</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained left groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joaquin Arias</td>
+  <td>2010-04-30</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Dickerson</td>
+  <td>2010-04-30</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Sprained right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Justin Duchscherer</td>
+  <td>2010-04-30</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Left hip inflammation</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jair Jurrjens</td>
+  <td>2010-04-30</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Yunel Escobar</td>
+  <td>2010-04-30</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Antonelli</td>
+  <td>2010-04-30</td>
+  <td>San Diego Padres</td>
+  <td>60-Day</td>
+  <td>Broken left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Leo Rosales</td>
+  <td>2010-04-29</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Sprained right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kris Benson</td>
+  <td>2010-04-29</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Right shoulder soreness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Pat Neshek</td>
+  <td>2010-04-29</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Inflammation of the middle finger on his right hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Madson</td>
+  <td>2010-04-29</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Broken right great toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brendan Donnelly</td>
+  <td>2010-04-28</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Rafael Furcal</td>
+  <td>2010-04-28</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nelson Cruz</td>
+  <td>2010-04-27</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Everth Cabrera</td>
+  <td>2010-04-27</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Hammel</td>
+  <td>2010-04-27</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Strained right groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jorge De La Rosa</td>
+  <td>2010-04-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Torn tendon in his left middle finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Felipe Lopez</td>
+  <td>2010-04-26</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Grade 1 right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brad Hawpe</td>
+  <td>2010-04-25</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Strained left quadriceps</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dan Meyer</td>
+  <td>2010-04-25</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>John Parrish</td>
+  <td>2010-04-25</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Inflammation in his left rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Jakubauskas</td>
+  <td>2010-04-25</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Head contusion and concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kurt Suzuki</td>
+  <td>2010-04-24</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Intercostal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Bobby Wilson</td>
+  <td>2010-04-24</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Concussion and strained left ankle</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Manny Ramirez</td>
+  <td>2010-04-23</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Guillen</td>
+  <td>2010-04-23</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Vicente Padilla</td>
+  <td>2010-04-23</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Weaver</td>
+  <td>2010-04-22</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryota Igarashi</td>
+  <td>2010-04-21</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Travis Buck</td>
+  <td>2010-04-21</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mark Ellis</td>
+  <td>2010-04-21</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Cameron</td>
+  <td>2010-04-20</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Sports hernia</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Mathis</td>
+  <td>2010-04-20</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Conor Jackson</td>
+  <td>2010-04-19</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason Marquis</td>
+  <td>2010-04-19</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Loose bodies in right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mike Cameron</td>
+  <td>2010-04-19</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Johnson</td>
+  <td>2010-04-18</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right intercostal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Tallet</td>
+  <td>2010-04-18</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Left forearm injury</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aaron Rowand</td>
+  <td>2010-04-18</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Fractured cheekbones</td>
+  <td>Head/Face</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Felix Pie</td>
+  <td>2010-04-16</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained upper back muscle</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Getz</td>
+  <td>2010-04-16</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Strained right oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chan Ho Park</td>
+  <td>2010-04-16</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Mijares</td>
+  <td>2010-04-16</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Nick Punto</td>
+  <td>2010-04-16</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right hip flexor strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.A. Happ</td>
+  <td>2010-04-16</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edwin Encarnacion</td>
+  <td>2010-04-15</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason LaRue</td>
+  <td>2010-04-14</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chan Ho Park</td>
+  <td>2010-04-14</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jo-Jo Reyes</td>
+  <td>2010-04-13</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Right knee hyperextension</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jimmy Rollins</td>
+  <td>2010-04-13</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Esmailin Caridad</td>
+  <td>2010-04-12</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jacoby Ellsbury</td>
+  <td>2010-04-12</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Left chest contusion</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ross Ohlendorf</td>
+  <td>2010-04-12</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jason LaRue</td>
+  <td>2010-04-12</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Michael Morse</td>
+  <td>2010-04-11</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kelly Shoppach</td>
+  <td>2010-04-11</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right knee sprain</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Miguel Montero</td>
+  <td>2010-04-11</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Right knee sprain</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Garrett Mock</td>
+  <td>2010-04-11</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Cervical spine injury</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Michael Gonzalez</td>
+  <td>2010-04-10</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Roberts</td>
+  <td>2010-04-10</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained abdominal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brad Ausmus</td>
+  <td>2010-04-09</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Pinched nerve in his lower back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Aaron Hill</td>
+  <td>2010-04-08</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Tightness in his right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Sammy Gervacio</td>
+  <td>2010-04-08</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Right shoulder posterior cuff strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Sean Green</td>
+  <td>2010-04-08</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right intercostal muscle strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Fuentes</td>
+  <td>2010-04-08</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Young</td>
+  <td>2010-04-07</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Tightness in his right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jesus Flores</td>
+  <td>2010-04-04</td>
+  <td>Washington Nationals</td>
+  <td>60-Day</td>
+  <td>Recovering from september 2009 right labrum surgery</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chien-Ming Wang</td>
+  <td>2010-04-04</td>
+  <td>Washington Nationals</td>
+  <td>60-Day</td>
+  <td>Recovering from july 2009 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Daisuke Matsuzaka</td>
+  <td>2010-04-04</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Neck strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Coco Crisp</td>
+  <td>2010-04-04</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Fractured left pinkie finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Sanches</td>
+  <td>2010-04-03</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Junichi Tazawa</td>
+  <td>2010-04-03</td>
+  <td>Boston Red Sox</td>
+  <td>60-Day</td>
+  <td>Sprained right elbow ligament</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Clay Condrey</td>
+  <td>2010-04-03</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Coste</td>
+  <td>2010-04-02</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Francis</td>
+  <td>2010-04-02</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Left shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Kazmir</td>
+  <td>2010-03-31</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Daniel Murphy</td>
+  <td>2010-03-31</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Sprained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Marc Rzepczynski</td>
+  <td>2010-03-31</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Fractured left middle finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Reggie Willits</td>
+  <td>2010-03-30</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ramon Castro</td>
+  <td>2010-03-29</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Bruised right heel</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Fields</td>
+  <td>2010-03-28</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right hip flexor strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Hector Ambriz</td>
+  <td>2010-03-27</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right elbow tendinitis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Fred Lewis</td>
+  <td>2010-03-27</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left intercostal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Reyes</td>
+  <td>2010-03-26</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Thyroid condition</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Hong-Chih Kuo</td>
+  <td>2010-03-26</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Tender left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kerry Wood</td>
+  <td>2010-03-26</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Strained right latissimus dorsi muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Matt Joyce</td>
+  <td>2010-03-26</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joel Hanrahan</td>
+  <td>2010-03-26</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Strained right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joe Thatcher</td>
+  <td>2010-03-26</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brett Carroll</td>
+  <td>2010-03-26</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ian Kinsler</td>
+  <td>2010-03-26</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Sprained right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alex Gordon</td>
+  <td>2010-03-26</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right thumb fracture</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Michael Wuertz</td>
+  <td>2010-03-26</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Yorman Bazardo</td>
+  <td>2010-03-26</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Huston Street</td>
+  <td>2010-03-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Gil Meche</td>
+  <td>2010-03-26</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right shoulder bursitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Kelvim Escobar</td>
+  <td>2010-03-26</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right labrum inflammation</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jack Hannahan</td>
+  <td>2010-03-26</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Boof Bonser</td>
+  <td>2010-03-26</td>
+  <td>Boston Red Sox</td>
+  <td>60-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Warner Madrigal</td>
+  <td>2010-03-26</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right forearm tightness</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Zach Miner</td>
+  <td>2010-03-26</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Right elbow tendinitis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Butler</td>
+  <td>2010-03-26</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right elbow impingement</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Greg Reynolds</td>
+  <td>2010-03-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right elbow contusion</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jordan Schafer</td>
+  <td>2010-03-26</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Recovering from september 2009 left hand surgery</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Ascanio</td>
+  <td>2010-03-26</td>
+  <td>Pittsburgh Pirates</td>
+  <td>60-Day</td>
+  <td>Recovering from october 2009 right labrum surgery</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.C. Romero</td>
+  <td>2010-03-26</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Recovering from october 2009 left elbow surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brad Lidge</td>
+  <td>2010-03-26</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Recovering from november 2009 right elbow surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ted Lilly</td>
+  <td>2010-03-26</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Recovering from november 2009 left shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joe Nathan</td>
+  <td>2010-03-26</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Recovering from march 2010 tommy john surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Cory Wade</td>
+  <td>2010-03-26</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Recovering from march 2010 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Angel Guzman</td>
+  <td>2010-03-26</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Recovering from march 2010 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Chris Pettit</td>
+  <td>2010-03-26</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Recovering from march 2010 right labrum surgery</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Josh Outman</td>
+  <td>2010-03-26</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Recovering from june 2009 tommy john surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Taylor Buchholz</td>
+  <td>2010-03-26</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Recovering from june 2009 tommy john surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dustin McGowan</td>
+  <td>2010-03-26</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Recovering from july 2008 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jose Morales</td>
+  <td>2010-03-26</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Recovering from january 2010 right wrist surgery</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Beltran</td>
+  <td>2010-03-26</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Recovering from january 2010 right knee surgery</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Diory Hernandez</td>
+  <td>2010-03-26</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Recovering from february 2010 left shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Freddy Sanchez</td>
+  <td>2010-03-26</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Recovering from december 2009 left shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brandon Webb</td>
+  <td>2010-03-26</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Recovering from august 2009 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Erik Bedard</td>
+  <td>2010-03-26</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Recovering from august 2009 left labrum surgery</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joey Devine</td>
+  <td>2010-03-26</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Recovering from april 2009 tommy john surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jed Lowrie</td>
+  <td>2010-03-26</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Mononucleosis</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>J.P. Howell</td>
+  <td>2010-03-26</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Left shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Bobby Seay</td>
+  <td>2010-03-26</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Left shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Tommy Hunter</td>
+  <td>2010-03-26</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Joe Blanton</td>
+  <td>2010-03-26</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Koji Uehara</td>
+  <td>2010-03-26</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Emmanuel Burriss</td>
+  <td>2010-03-26</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Left foot fracture</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Alberto Arias</td>
+  <td>2010-03-26</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Impingement in his rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Lance Berkman</td>
+  <td>2010-03-26</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Cranky left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jeff Suppan</td>
+  <td>2010-03-26</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Cervical disc pain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Cliff Lee</td>
+  <td>2010-03-26</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Abdominal strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Russell Branyan</td>
+  <td>2010-03-26</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>David Riske</td>
+  <td>2010-03-25</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Mat Gamel</td>
+  <td>2010-03-25</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Eric Hurley</td>
+  <td>2010-03-13</td>
+  <td>Texas Rangers</td>
+  <td>60-Day</td>
+  <td>Recovering from january 2009 right shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Scott Richmond</td>
+  <td>2010-03-04</td>
+  <td>Toronto Blue Jays</td>
+  <td>60-Day</td>
+  <td>Right shoulder impingement</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Edinson Volquez</td>
+  <td>2010-02-22</td>
+  <td>Cincinnati Reds</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Dirk Hayhurst</td>
+  <td>2010-02-21</td>
+  <td>Toronto Blue Jays</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Jesse Litsch</td>
+  <td>2010-02-19</td>
+  <td>Toronto Blue Jays</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Vicente Padilla</td>
+  <td>2010-01-23</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Right forearm soreness</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Bates</td>
+  <td>2009-09-29</td>
+  <td>Boston Red Sox</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Bruce Chen</td>
+  <td>2009-09-23</td>
+  <td>Kansas City Royals</td>
+  <td>60-Day</td>
+  <td>Torn left oblique muscle</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Junichi Tazawa</td>
+  <td>2009-09-21</td>
+  <td>Boston Red Sox</td>
+  <td>60-Day</td>
+  <td>Mild left groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nolan Reimold</td>
+  <td>2009-09-18</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left Achilles tendinitis</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jesus Flores</td>
+  <td>2009-09-18</td>
+  <td>Washington Nationals</td>
+  <td>60-Day</td>
+  <td>Torn right labrum</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Guillen</td>
+  <td>2009-09-18</td>
+  <td>Kansas City Royals</td>
+  <td>60-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Justin Miller</td>
+  <td>2009-09-16</td>
+  <td>San Francisco Giants</td>
+  <td>60-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Roy Oswalt</td>
+  <td>2009-09-16</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Lower back inflammation</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark DiFelice</td>
+  <td>2009-09-15</td>
+  <td>Milwaukee Brewers</td>
+  <td>60-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Sean White</td>
+  <td>2009-09-15</td>
+  <td>Seattle Mariners</td>
+  <td>60-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Smith</td>
+  <td>2009-09-14</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Sprained left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Vin Mazzaro</td>
+  <td>2009-09-08</td>
+  <td>Oakland Athletics</td>
+  <td>60-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kam Mickolio</td>
+  <td>2009-09-07</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Pena</td>
+  <td>2009-09-07</td>
+  <td>Tampa Bay Rays</td>
+  <td>60-Day</td>
+  <td>Fractured left index and middle fingers</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alfonso Soriano</td>
+  <td>2009-09-04</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Recovering from left knee surgery</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Grady Sizemore</td>
+  <td>2009-09-04</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Recovering from left elbow surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Adam Jones</td>
+  <td>2009-09-02</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Hollimon</td>
+  <td>2009-09-01</td>
+  <td>Detroit Tigers</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Guillermo Mota</td>
+  <td>2009-08-31</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Ingrown toe nail</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Qualls</td>
+  <td>2009-08-31</td>
+  <td>Arizona Diamondbacks</td>
+  <td>60-Day</td>
+  <td>Dislocated left kneecap</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Laynce Nix</td>
+  <td>2009-08-31</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Bulging cervical disc</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Guillermo Mota</td>
+  <td>2009-08-30</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ricky Nolasco</td>
+  <td>2009-08-29</td>
+  <td>Florida Marlins</td>
+  <td>60-Day</td>
+  <td>Torn meniscus in his right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kyle Blanks</td>
+  <td>2009-08-29</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained arch in right foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Russell Branyan</td>
+  <td>2009-08-29</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Herniated disk</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nyjer Morgan</td>
+  <td>2009-08-28</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Fractured left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Oliver Perez</td>
+  <td>2009-08-26</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Patellar tendinitis in his right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Karstens</td>
+  <td>2009-08-25</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Strained lower back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dexter Fowler</td>
+  <td>2009-08-25</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Bruised right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alberto Arias</td>
+  <td>2009-08-24</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Dickerson</td>
+  <td>2009-08-24</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Severely sprained his left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Andruw Jones</td>
+  <td>2009-08-24</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Hanigan</td>
+  <td>2009-08-24</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dennys Reyes</td>
+  <td>2009-08-23</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Left elbow discomfort</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brendan Donnelly</td>
+  <td>2009-08-23</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Snyder</td>
+  <td>2009-08-23</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Lower back inflammation</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Adams</td>
+  <td>2009-08-22</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Greg Dobbs</td>
+  <td>2009-08-22</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Crede</td>
+  <td>2009-08-22</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained lower back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kyle Lohse</td>
+  <td>2009-08-22</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Strained left groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Cook</td>
+  <td>2009-08-22</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edwin Encarnacion</td>
+  <td>2009-08-21</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Johan Santana</td>
+  <td>2009-08-21</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Bone chips in his left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Harang</td>
+  <td>2009-08-21</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Appendectomy</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edwin Encarnacion</td>
+  <td>2009-08-20</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Willy Taveras</td>
+  <td>2009-08-19</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained left quadriceps muscle</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Francisco Liriano</td>
+  <td>2009-08-18</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Left arm fatigue</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Freddy Sanchez</td>
+  <td>2009-08-18</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Bobby Crosby</td>
+  <td>2009-08-18</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jesus Colome</td>
+  <td>2009-08-18</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Freddy Sanchez</td>
+  <td>2009-08-18</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nick Johnson</td>
+  <td>2009-08-17</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Trevor Crowe</td>
+  <td>2009-08-17</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right internal oblique strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Wright</td>
+  <td>2009-08-17</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Post-concussion symptoms</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nate McLouth</td>
+  <td>2009-08-16</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Johnny Cueto</td>
+  <td>2009-08-16</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Hiroki Kuroda</td>
+  <td>2009-08-16</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Wright</td>
+  <td>2009-08-16</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eddie Guardado</td>
+  <td>2009-08-15</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left Knee Inflammation</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dewayne Wise</td>
+  <td>2009-08-15</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jarrod Saltalamacchia</td>
+  <td>2009-08-15</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Sore right arm</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eddie Guardado</td>
+  <td>2009-08-15</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left knee inflammation</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Hampton</td>
+  <td>2009-08-14</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Esteban German</td>
+  <td>2009-08-14</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Adrian Beltre</td>
+  <td>2009-08-13</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Severely contused right testicle</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alex Cora</td>
+  <td>2009-08-13</td>
+  <td>New York Mets</td>
+  <td>60-Day</td>
+  <td>Ligament injuries to both thumbs</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Wesley Wright</td>
+  <td>2009-08-12</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Left shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Getz</td>
+  <td>2009-08-12</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Strained oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Evan Meek</td>
+  <td>2009-08-12</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Ascanio</td>
+  <td>2009-08-12</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Waechter</td>
+  <td>2009-08-12</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rich Aurilia</td>
+  <td>2009-08-12</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Schoeneweis</td>
+  <td>2009-08-11</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Depression</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Schoeneweis</td>
+  <td>2009-08-10</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Saunders</td>
+  <td>2009-08-08</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Tightness in left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Rolen</td>
+  <td>2009-08-08</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jed Lowrie</td>
+  <td>2009-08-07</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Ulnar neuritis in his left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rocco Baldelli</td>
+  <td>2009-08-06</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Left ankle contusion</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jon Niese</td>
+  <td>2009-08-06</td>
+  <td>New York Mets</td>
+  <td>60-Day</td>
+  <td>Torn right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Schmidt</td>
+  <td>2009-08-06</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Juan Cruz</td>
+  <td>2009-08-06</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Justin Upton</td>
+  <td>2009-08-06</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Henry Sosa</td>
+  <td>2009-08-05</td>
+  <td>San Francisco Giants</td>
+  <td>60-Day</td>
+  <td>Torn right shoulder muscle</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Brocail</td>
+  <td>2009-08-05</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Todd Wellemeyer</td>
+  <td>2009-08-05</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Andres Blanco</td>
+  <td>2009-08-04</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Left calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Donnie Veal</td>
+  <td>2009-08-04</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Sprained left index finger</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Austin Kearns</td>
+  <td>2009-08-04</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Right thumb contusion</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nelson Cruz</td>
+  <td>2009-08-04</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left ankle sprain</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Downs</td>
+  <td>2009-08-02</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Left big toe injury</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Burke Badenhop</td>
+  <td>2009-08-02</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Strained right trapezius</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Grilli</td>
+  <td>2009-08-02</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Corey Hart</td>
+  <td>2009-08-02</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Recovering from an appendectomy</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Zambrano</td>
+  <td>2009-08-02</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Muscle spasms in back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dallas Braden</td>
+  <td>2009-08-01</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Rash on left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>George Kottaras</td>
+  <td>2009-08-01</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brad Bergesen</td>
+  <td>2009-07-31</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left leg contusion</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Andres Torres</td>
+  <td>2009-07-31</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Juan Rincon</td>
+  <td>2009-07-31</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right elbow stiffness</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Reed Johnson</td>
+  <td>2009-07-30</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Left foot fracture</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Oscar Salazar</td>
+  <td>2009-07-30</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right achilles tendon</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>George Kottaras</td>
+  <td>2009-07-30</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Suppan</td>
+  <td>2009-07-28</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>LaTroy Hawkins</td>
+  <td>2009-07-28</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Shingles</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rich Hill</td>
+  <td>2009-07-28</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Micah Owings</td>
+  <td>2009-07-27</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Tight right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nate Schierholtz</td>
+  <td>2009-07-27</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Strained left hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Daric Barton</td>
+  <td>2009-07-27</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Dickerson</td>
+  <td>2009-07-27</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Bruised right rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Erik Bedard</td>
+  <td>2009-07-26</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brett Gardner</td>
+  <td>2009-07-26</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jared Burton</td>
+  <td>2009-07-25</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Right shoulder fatigue</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Seth McClung</td>
+  <td>2009-07-25</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right elbow sprain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Bartolo Colon</td>
+  <td>2009-07-25</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Bradford</td>
+  <td>2009-07-23</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Lower back tightness</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Guillen</td>
+  <td>2009-07-23</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Tear of the lateral collateral ligament in his right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Lance Berkman</td>
+  <td>2009-07-23</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained left calf muscle</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Durbin</td>
+  <td>2009-07-23</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right latissimus strain</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Clay Condrey</td>
+  <td>2009-07-23</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Gary Sheffield</td>
+  <td>2009-07-21</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Leg injury</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Manuel Corpas</td>
+  <td>2009-07-21</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rich Aurilia</td>
+  <td>2009-07-21</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Right big toe infection</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ted Lilly</td>
+  <td>2009-07-21</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Giambi</td>
+  <td>2009-07-20</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right quadricep</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>J.C. Romero</td>
+  <td>2009-07-20</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Strained left forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Fernando Nieve</td>
+  <td>2009-07-20</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Muscle tear in right thigh</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Darin Erstad</td>
+  <td>2009-07-19</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jordan Zimmermann</td>
+  <td>2009-07-19</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Right elbow discomfort</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edgar Gonzalez</td>
+  <td>2009-07-19</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Gary Sheffield</td>
+  <td>2009-07-18</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ramon Hernandez</td>
+  <td>2009-07-18</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Sore left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joel Zumaya</td>
+  <td>2009-07-18</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Right shoulder soreness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tim Wakefield</td>
+  <td>2009-07-18</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Pedro Martinez</td>
+  <td>2009-07-15</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Mild right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Sweeney</td>
+  <td>2009-07-12</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Right patella tendinitis</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Gil Meche</td>
+  <td>2009-07-12</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Lower left back injury</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jay Bruce</td>
+  <td>2009-07-12</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Broken right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Olsen</td>
+  <td>2009-07-11</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Sore left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Frank Francisco</td>
+  <td>2009-07-11</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Pneumonia</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alan Embree</td>
+  <td>2009-07-11</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Broken right leg</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Sampson</td>
+  <td>2009-07-10</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Muscle spasms in right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brian Moehler</td>
+  <td>2009-07-08</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Vladimir Guerrero</td>
+  <td>2009-07-08</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained muscle behind his left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Torii Hunter</td>
+  <td>2009-07-08</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Adductor strain on his right side</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Geovany Soto</td>
+  <td>2009-07-07</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Mild left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Ray</td>
+  <td>2009-07-06</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Eckstein</td>
+  <td>2009-07-06</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ronald Belisario</td>
+  <td>2009-07-06</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Irritation in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Bailey</td>
+  <td>2009-07-06</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>High left ankle sprain</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Sweeney</td>
+  <td>2009-07-06</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Henry Blanco</td>
+  <td>2009-07-05</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Patton</td>
+  <td>2009-07-05</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chien-Ming Wang</td>
+  <td>2009-07-05</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Bailey</td>
+  <td>2009-07-05</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kevin Slowey</td>
+  <td>2009-07-04</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Strained right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Fernando Martinez</td>
+  <td>2009-07-04</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Inflammation behind his right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Danny Richar</td>
+  <td>2009-07-03</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Torn labrum in his left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kelly Johnson</td>
+  <td>2009-07-03</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Right wrist tendonitis</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Dempster</td>
+  <td>2009-07-03</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Broken big right toe</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Richmond</td>
+  <td>2009-07-01</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Right biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark DeRosa</td>
+  <td>2009-07-01</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Left wrist sprain</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Khalil Greene</td>
+  <td>2009-06-29</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Social anxiety disorder</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Adrian Beltre</td>
+  <td>2009-06-29</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Left shoulder surgery</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Milton</td>
+  <td>2009-06-28</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Strained back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Lowell</td>
+  <td>2009-06-28</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Sore right hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kelvin Pichardo</td>
+  <td>2009-06-28</td>
+  <td>San Francisco Giants</td>
+  <td>60-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nate Robertson</td>
+  <td>2009-06-27</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Mass in his left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Antonio Bastardo</td>
+  <td>2009-06-26</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Strained left posterior shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Ryan Ludwick</td>
+  <td>2009-06-26</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Left calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Byrnes</td>
+  <td>2009-06-26</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Fractured left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kyle Farnsworth</td>
+  <td>2009-06-25</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Strained right groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Bennett</td>
+  <td>2009-06-25</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Fractured left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Koji Uehara</td>
+  <td>2009-06-24</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right elbow tendinitis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Matt Lindstrom</td>
+  <td>2009-06-24</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Matt Harrison</td>
+  <td>2009-06-24</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Wilkin Castillo</td>
+  <td>2009-06-21</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Torn labrum in right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Angel Guzman</td>
+  <td>2009-06-21</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right triceps strain</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dave Bush</td>
+  <td>2009-06-21</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Right arm fatigue</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Snyder</td>
+  <td>2009-06-21</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Lower back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Reed Johnson</td>
+  <td>2009-06-21</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Lower back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Miles</td>
+  <td>2009-06-21</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Hyperextended right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Josh Outman</td>
+  <td>2009-06-20</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Sprained left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Daisuke Matsuzaka</td>
+  <td>2009-06-20</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Mild right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Endy Chavez</td>
+  <td>2009-06-20</td>
+  <td>Seattle Mariners</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cliff Floyd</td>
+  <td>2009-06-19</td>
+  <td>San Diego Padres</td>
+  <td>60-Day</td>
+  <td>Torn labrum in right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Giles</td>
+  <td>2009-06-19</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Right knee contusion</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Clay Condrey</td>
+  <td>2009-06-19</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Carlos Ruiz</td>
+  <td>2009-06-19</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Manuel Corpas</td>
+  <td>2009-06-19</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Bone spurs in right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alex Gonzalez</td>
+  <td>2009-06-19</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Bone chips in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nick Hundley</td>
+  <td>2009-06-18</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Left wrist contusion</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Raul Ibanez</td>
+  <td>2009-06-18</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Groin injury</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kiko Calero</td>
+  <td>2009-06-18</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Downs</td>
+  <td>2009-06-17</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Sprain of the big toe on his left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Young</td>
+  <td>2009-06-15</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Inflamed right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dontrelle Willis</td>
+  <td>2009-06-15</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Anxiety disorder</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Hampton</td>
+  <td>2009-06-14</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained left groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Isringhausen</td>
+  <td>2009-06-14</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Pain in his surgically repaired right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Isringhausen</td>
+  <td>2009-06-14</td>
+  <td>Tampa Bay Rays</td>
+  <td>60-Day</td>
+  <td>Pain in his surgically repaired right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Coco Crisp</td>
+  <td>2009-06-13</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Strained right rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Geoff Blum</td>
+  <td>2009-06-13</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Coco Crisp</td>
+  <td>2009-06-13</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Rght rotator cuff strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Waddell</td>
+  <td>2009-06-13</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Non-baseball-related medical issue</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Roy Halladay</td>
+  <td>2009-06-13</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Mild groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Lincoln</td>
+  <td>2009-06-13</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Bulging disc in neck</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Terrell Young</td>
+  <td>2009-06-13</td>
+  <td>Washington Nationals</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Eyre</td>
+  <td>2009-06-12</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Left calf strain</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ervin Santana</td>
+  <td>2009-06-12</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Pain in his right triceps</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Greg Norton</td>
+  <td>2009-06-11</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Denard Span</td>
+  <td>2009-06-10</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Vestibular neuritis of the right ear</td>
+  <td>Head/Face</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Geoff Geary</td>
+  <td>2009-06-10</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeremy Bonderman</td>
+  <td>2009-06-09</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Thoracic outlet compression syndrome</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jake Peavy</td>
+  <td>2009-06-09</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained tendon in right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Luke Gregerson</td>
+  <td>2009-06-08</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Felipe Paulino</td>
+  <td>2009-06-08</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Luis Perdomo</td>
+  <td>2009-06-08</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Bartolo Colon</td>
+  <td>2009-06-08</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Sore left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Erik Bedard</td>
+  <td>2009-06-08</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Left shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brad Lidge</td>
+  <td>2009-06-07</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Sprained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>John Maine</td>
+  <td>2009-06-07</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right shoulder weakness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kelvim Escobar</td>
+  <td>2009-06-07</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Right shoulder tenderness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Milton</td>
+  <td>2009-06-06</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Back tightness</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brandon McCarthy</td>
+  <td>2009-06-05</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Stress fracture in right shoulder blade</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>J.J. Putz</td>
+  <td>2009-06-05</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Bone spur on the back of his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kyle Lohse</td>
+  <td>2009-06-04</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Frank Francisco</td>
+  <td>2009-06-04</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendonitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cesar Izturis</td>
+  <td>2009-06-04</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Recovering from an appendectomy</td>
+  <td>Internal</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Hairston</td>
+  <td>2009-06-03</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained left biceps</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Asdrubal Cabrera</td>
+  <td>2009-06-03</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Sprained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Sweeney</td>
+  <td>2009-06-03</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Sprained left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jorge Campillo</td>
+  <td>2009-06-03</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Anibal Sanchez</td>
+  <td>2009-06-03</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right shoulder sprain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ramon Martinez</td>
+  <td>2009-06-03</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Fractured left pinkie</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edinson Volquez</td>
+  <td>2009-06-02</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Tendinitis in his right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rafael Betancourt</td>
+  <td>2009-06-01</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Strained right groin</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Casey Kotchman</td>
+  <td>2009-06-01</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Angel Pagan</td>
+  <td>2009-06-01</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Josh Hamilton</td>
+  <td>2009-06-01</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Grady Sizemore</td>
+  <td>2009-05-31</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Left elbow synovitis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>John Buck</td>
+  <td>2009-05-31</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Slight herination in lower back</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kip Wells</td>
+  <td>2009-05-31</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Right adductor strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Stults</td>
+  <td>2009-05-31</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joey Votto</td>
+  <td>2009-05-30</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Stress related issues</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Donnie Veal</td>
+  <td>2009-05-30</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Sidney Ponson</td>
+  <td>2009-05-30</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Tracy</td>
+  <td>2009-05-30</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Freel</td>
+  <td>2009-05-28</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Will Ohman</td>
+  <td>2009-05-28</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Sore left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Khalil Greene</td>
+  <td>2009-05-28</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Social anxiety disorder</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brett Myers</td>
+  <td>2009-05-28</td>
+  <td>Philadelphia Phillies</td>
+  <td>15-Day</td>
+  <td>Right hip inflammation</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nick Punto</td>
+  <td>2009-05-28</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scot Shields</td>
+  <td>2009-05-27</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Patella tendinitis in his left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kazuo Matsui</td>
+  <td>2009-05-26</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Miles</td>
+  <td>2009-05-26</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Quentin</td>
+  <td>2009-05-26</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Plantar fasciitis in his left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Shouse</td>
+  <td>2009-05-25</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Left elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Akinori Iwamura</td>
+  <td>2009-05-25</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Torn acl in left knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Bartlett</td>
+  <td>2009-05-25</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Iannetta</td>
+  <td>2009-05-24</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Aviles</td>
+  <td>2009-05-24</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nomar Garciaparra</td>
+  <td>2009-05-24</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Koji Uehara</td>
+  <td>2009-05-24</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Renyel Pinto</td>
+  <td>2009-05-23</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Lou Montanez</td>
+  <td>2009-05-23</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Torn ligaments in his right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aaron Laffey</td>
+  <td>2009-05-23</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Church</td>
+  <td>2009-05-23</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Anthony Reyes</td>
+  <td>2009-05-23</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Troy Percival</td>
+  <td>2009-05-22</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Robinson Tejeda</td>
+  <td>2009-05-21</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Tendinitis of the right rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jo-Jo Reyes</td>
+  <td>2009-05-21</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Xavier Paul</td>
+  <td>2009-05-21</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Skin infection on left leg</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Kazmir</td>
+  <td>2009-05-21</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right quadriceps strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Reyes</td>
+  <td>2009-05-21</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right calf tendinitis</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Omar Infante</td>
+  <td>2009-05-21</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Fractured left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Bruney</td>
+  <td>2009-05-20</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Right elbow discomfort</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Glen Perkins</td>
+  <td>2009-05-19</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alex Cora</td>
+  <td>2009-05-18</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Torn ligament in right thumb</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Matt Daley</td>
+  <td>2009-05-18</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Sprained left foot</td>
+  <td>Lower leg/Foot</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rich Harden</td>
+  <td>2009-05-18</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Mid-back strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Elijah Dukes</td>
+  <td>2009-05-18</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Olsen</td>
+  <td>2009-05-17</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rickie Weeks</td>
+  <td>2009-05-17</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Torn tendon in his left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Vicente Padilla</td>
+  <td>2009-05-17</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Shane Loux</td>
+  <td>2009-05-17</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alfredo Amezaga</td>
+  <td>2009-05-17</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Left knee contusion</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edinson Volquez</td>
+  <td>2009-05-17</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Back spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dan Giese</td>
+  <td>2009-05-16</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Right elbow ulnaritis</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tyler Yates</td>
+  <td>2009-05-16</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Luis Rodriguez</td>
+  <td>2009-05-14</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Geoff Geary</td>
+  <td>2009-05-14</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Right biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Ludwick</td>
+  <td>2009-05-13</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Pat Burrell</td>
+  <td>2009-05-12</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Stiff neck</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Conor Jackson</td>
+  <td>2009-05-12</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>General illness</td>
+  <td>Other</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Luke Scott</td>
+  <td>2009-05-11</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Strained left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nick Masset</td>
+  <td>2009-05-11</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Delgado</td>
+  <td>2009-05-11</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right hip impingement</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jesus Flores</td>
+  <td>2009-05-10</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Right shoulder contusion</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Fox</td>
+  <td>2009-05-10</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Yusmeiro Petit</td>
+  <td>2009-05-09</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Aramis Ramirez</td>
+  <td>2009-05-09</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Dislocated left shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Molina</td>
+  <td>2009-05-08</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained left quad</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joakim Soria</td>
+  <td>2009-05-08</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Anibal Sanchez</td>
+  <td>2009-05-08</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right shoulder strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Silva</td>
+  <td>2009-05-07</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right should inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Frank Francisco</td>
+  <td>2009-05-07</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Frank Francisco</td>
+  <td>2009-05-07</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Shawn Kelley</td>
+  <td>2009-05-06</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nate Robertson</td>
+  <td>2009-05-06</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Low back muscle strain</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jorge Posada</td>
+  <td>2009-05-05</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tony Clark</td>
+  <td>2009-05-05</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Sprained right hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Guillen</td>
+  <td>2009-05-05</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kevin Youkilis</td>
+  <td>2009-05-05</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Left oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rick Ankiel</td>
+  <td>2009-05-05</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Bruised right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Brocail</td>
+  <td>2009-05-04</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tom Gordon</td>
+  <td>2009-05-04</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Carlos Zambrano</td>
+  <td>2009-05-04</td>
+  <td>Chicago Cubs</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Oliver Perez</td>
+  <td>2009-05-03</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Right knee tendinitis</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tony Pena</td>
+  <td>2009-05-03</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Fractured left hamate bone</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dennis Sarfate</td>
+  <td>2009-05-02</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right middle finger injury</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brendan Ryan</td>
+  <td>2009-04-30</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Left hamstring injury</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Anderson</td>
+  <td>2009-04-30</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Strained right oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Hong-Chih Kuo</td>
+  <td>2009-04-30</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Sore left elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Nomar Garciaparra</td>
+  <td>2009-04-29</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Roy Corcoran</td>
+  <td>2009-04-29</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Strained neck</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark Ellis</td>
+  <td>2009-04-29</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained left calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Santiago Casilla</td>
+  <td>2009-04-29</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Sprained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Rivera</td>
+  <td>2009-04-29</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Sprained left ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Travis Hafner</td>
+  <td>2009-04-29</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right shoulder soreness</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Smith</td>
+  <td>2009-04-29</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Right rotator cuff strain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Andres Torres</td>
+  <td>2009-04-28</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Edwin Encarnacion</td>
+  <td>2009-04-28</td>
+  <td>Cincinnati Reds</td>
+  <td>15-Day</td>
+  <td>Chip fracture in left wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Josh Hamilton</td>
+  <td>2009-04-27</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Straned left intercostal muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Valverde</td>
+  <td>2009-04-27</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right calf</td>
+  <td>Calf</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Baker</td>
+  <td>2009-04-27</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Sprained left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Josh Hamilton</td>
+  <td>2009-04-27</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Damaso Marte</td>
+  <td>2009-04-26</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Left shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Shawn Hill</td>
+  <td>2009-04-26</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Right elbow inflammation</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Damaso Marte</td>
+  <td>2009-04-26</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Left shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Humberto Quintero</td>
+  <td>2009-04-25</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Chavez</td>
+  <td>2009-04-25</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cody Ransom</td>
+  <td>2009-04-25</td>
+  <td>New York Yankees</td>
+  <td>60-Day</td>
+  <td>Right quadriceps injury</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jack Wilson</td>
+  <td>2009-04-25</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Left middle finger sprain</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2010</td>
+  <td>Brett Anderson</td>
+  <td>2009-04-25</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>Left elbow inflammation and a left forearm strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Matt Treanor</td>
+  <td>2009-04-24</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Torn labrum in his right hip</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brandon Morrow</td>
+  <td>2009-04-24</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Right biceps tendinitis</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Willie Eyre</td>
+  <td>2009-04-23</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>Right groin strain</td>
+  <td>Groin</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>B.J. Ryan</td>
+  <td>2009-04-23</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Muscle tightness in his left trapezius</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian McCann</td>
+  <td>2009-04-23</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left eye infection</td>
+  <td>Head/Face</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Bruney</td>
+  <td>2009-04-22</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Strained right flexor mass</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Beimel</td>
+  <td>2009-04-21</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left hip flexor strain</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rocco Baldelli</td>
+  <td>2009-04-21</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Tight left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Andrew Miller</td>
+  <td>2009-04-21</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>Right oblique strain</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Craig Hansen</td>
+  <td>2009-04-20</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Neck spasms</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Garret Anderson</td>
+  <td>2009-04-20</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Left quad tightness</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Everth Cabrera</td>
+  <td>2009-04-20</td>
+  <td>San Diego Padres</td>
+  <td>60-Day</td>
+  <td>Fractured left hand</td>
+  <td>Hand/Finger/Thumb</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Doumit</td>
+  <td>2009-04-20</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>Broken right wrist</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chien-Ming Wang</td>
+  <td>2009-04-19</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Weakness in the adductor muscles of both hips</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Darren Oliver</td>
+  <td>2009-04-19</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Strained left triceps</td>
+  <td>Arm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ryan Speier</td>
+  <td>2009-04-19</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>Strained left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Marcus Thames</td>
+  <td>2009-04-19</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>Pulled ribcage muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Roger Bernadina</td>
+  <td>2009-04-19</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Fractured right ankle</td>
+  <td>Ankle</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dustin Moseley</td>
+  <td>2009-04-18</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Stiffness in right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jesse Crain</td>
+  <td>2009-04-18</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>Right shoulder inflammation</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Waechter</td>
+  <td>2009-04-18</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Lateral strain of right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jorge Campillo</td>
+  <td>2009-04-17</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Mientkiewicz</td>
+  <td>2009-04-17</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Dislocated right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Vladimir Guerrero</td>
+  <td>2009-04-16</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>Torn right pectoral muscle</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kenji Johjima</td>
+  <td>2009-04-16</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>Strained right hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alex Gordon</td>
+  <td>2009-04-16</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Right hip labral cartilage tear</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Schneider</td>
+  <td>2009-04-16</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>Muscle strain in middle of back</td>
+  <td>Back/Neck/Spine</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chris Carpenter</td>
+  <td>2009-04-15</td>
+  <td>St. Louis Cardinals</td>
+  <td>15-Day</td>
+  <td>Strained left rib cage</td>
+  <td>Upper body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alfredo Simon</td>
+  <td>2009-04-15</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Right elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Xavier Nady</td>
+  <td>2009-04-15</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>Right elbow pain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Daisuke Matsuzaka</td>
+  <td>2009-04-15</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Mild right shoulder sprain</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cristian Guzman</td>
+  <td>2009-04-14</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left hamstring strain</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Walter Silva</td>
+  <td>2009-04-14</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>Strained right forearm</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brian Moehler</td>
+  <td>2009-04-14</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Sprained right knee</td>
+  <td>Knee</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dewayne Wise</td>
+  <td>2009-04-14</td>
+  <td>Chicago White Sox</td>
+  <td>15-Day</td>
+  <td>Separated right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jesse Litsch</td>
+  <td>2009-04-14</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>Right forearm strain</td>
+  <td>Forearm</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Willie Harris</td>
+  <td>2009-04-13</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>Left oblique pull</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Melvin Mora</td>
+  <td>2009-04-13</td>
+  <td>Baltimore Orioles</td>
+  <td>15-Day</td>
+  <td>Tight left hamstring</td>
+  <td>Hamstring</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jed Lowrie</td>
+  <td>2009-04-12</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>Left wrist sprain</td>
+  <td>Wrist</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cory Wade</td>
+  <td>2009-04-12</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Right shoulder bursitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Lewis</td>
+  <td>2009-04-11</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Left elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Lewis</td>
+  <td>2009-04-11</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>Left elbow strain</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Doug Brocail</td>
+  <td>2009-04-11</td>
+  <td>Houston Astros</td>
+  <td>15-Day</td>
+  <td>Strained right rotator cuff</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jose Guillen</td>
+  <td>2009-04-10</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>Torn right groin muscle</td>
+  <td>Lower body</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Riske</td>
+  <td>2009-04-10</td>
+  <td>Milwaukee Brewers</td>
+  <td>15-Day</td>
+  <td>Tight right elbow</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Shawn Riggans</td>
+  <td>2009-04-10</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Right shoulder tendinitis</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Martinez</td>
+  <td>2009-04-10</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>Concussion</td>
+  <td>Concussion</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Hiroki Kuroda</td>
+  <td>2009-04-07</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>Strained left oblique</td>
+  <td>Oblique</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Brandon Webb</td>
+  <td>2009-04-07</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>Sore right shoulder</td>
+  <td>Shoulder</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dustin McGowan</td>
+  <td>2009-04-06</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Shaun Marcum</td>
+  <td>2009-04-06</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cliff Floyd</td>
+  <td>2009-04-06</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jamey Carroll</td>
+  <td>2009-04-06</td>
+  <td>Cleveland Indians</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Casey Janssen</td>
+  <td>2009-04-06</td>
+  <td>Toronto Blue Jays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Billy Wagner</td>
+  <td>2009-04-05</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>B.J. Upton</td>
+  <td>2009-04-05</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Schmidt</td>
+  <td>2009-04-05</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ervin Santana</td>
+  <td>2009-04-05</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alex Rodriguez</td>
+  <td>2009-04-05</td>
+  <td>New York Yankees</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tim Redding</td>
+  <td>2009-04-05</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Fernando Perez</td>
+  <td>2009-04-05</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Angel Pagan</td>
+  <td>2009-04-05</td>
+  <td>New York Mets</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dustin Nippert</td>
+  <td>2009-04-05</td>
+  <td>Texas Rangers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Eric Hurley</td>
+  <td>2009-04-05</td>
+  <td>Texas Rangers</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tom Gordon</td>
+  <td>2009-04-05</td>
+  <td>Arizona Diamondbacks</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Kelvim Escobar</td>
+  <td>2009-04-05</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Taylor Buchholz</td>
+  <td>2009-04-05</td>
+  <td>Colorado Rockies</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Chad Bradford</td>
+  <td>2009-04-05</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joaquin Benoit</td>
+  <td>2009-04-05</td>
+  <td>Texas Rangers</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cha Seung Baek</td>
+  <td>2009-04-05</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Adams</td>
+  <td>2009-04-05</td>
+  <td>San Diego Padres</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark Worrell</td>
+  <td>2009-04-05</td>
+  <td>San Diego Padres</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>John Lackey</td>
+  <td>2009-04-05</td>
+  <td>Los Angeles Angels</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Rick VandenHurk</td>
+  <td>2009-04-04</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jonathan Van Every</td>
+  <td>2009-04-04</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>John Smoltz</td>
+  <td>2009-04-04</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Proctor</td>
+  <td>2009-04-04</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark Kotsay</td>
+  <td>2009-04-04</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Miguel Gonzalez</td>
+  <td>2009-04-04</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joey Devine</td>
+  <td>2009-04-04</td>
+  <td>Oakland Athletics</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Alfredo Amezaga</td>
+  <td>2009-04-04</td>
+  <td>Florida Marlins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Terrell Young</td>
+  <td>2009-04-03</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ichiro Suzuki</td>
+  <td>2009-04-03</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Phil Dumatrait</td>
+  <td>2009-04-02</td>
+  <td>Pittsburgh Pirates</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Joe Mauer</td>
+  <td>2009-04-02</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Tom Glavine</td>
+  <td>2009-04-02</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Boof Bonser</td>
+  <td>2009-04-02</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Scott Baker</td>
+  <td>2009-04-02</td>
+  <td>Minnesota Twins</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mark Worrell</td>
+  <td>2009-04-01</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Mike Adams</td>
+  <td>2009-04-01</td>
+  <td>San Diego Padres</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>David Ross</td>
+  <td>2009-04-01</td>
+  <td>Atlanta Braves</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Dmitri Young</td>
+  <td>2009-04-01</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Isringhausen</td>
+  <td>2009-04-01</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Cesar Jimenez</td>
+  <td>2009-04-01</td>
+  <td>Seattle Mariners</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>John Bale</td>
+  <td>2009-04-01</td>
+  <td>Kansas City Royals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Isringhausen</td>
+  <td>2009-03-31</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>Recovering from september 2008 right elbow surgery</td>
+  <td>Elbow</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jason Isringhausen</td>
+  <td>2009-03-31</td>
+  <td>Tampa Bay Rays</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeremy Bonderman</td>
+  <td>2009-03-30</td>
+  <td>Detroit Tigers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Noah Lowry</td>
+  <td>2009-03-27</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Jeff Francis</td>
+  <td>2009-03-27</td>
+  <td>Colorado Rockies</td>
+  <td>60-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Julio Lugo</td>
+  <td>2009-03-27</td>
+  <td>Boston Red Sox</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Justin Duchscherer</td>
+  <td>2009-03-27</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Ben Copeland</td>
+  <td>2009-03-27</td>
+  <td>Oakland Athletics</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Sergio Romo</td>
+  <td>2009-03-27</td>
+  <td>San Francisco Giants</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Delwyn Young</td>
+  <td>2009-03-27</td>
+  <td>Los Angeles Dodgers</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+ <tr>
+  <td>2009</td>
+  <td>Anderson Hernandez</td>
+  <td>2009-03-27</td>
+  <td>Washington Nationals</td>
+  <td>15-Day</td>
+  <td>N/A</td>
+  <td>N/A</td>
+ </tr>
+</tbody></table>
