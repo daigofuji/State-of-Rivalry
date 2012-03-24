@@ -5,20 +5,13 @@ var rivalry = {};
 
 rivalry.Matchup = Backbone.Model.extend({ 
 	
-	defaults: {
-	
-	
-	}, 
-	
 	initialize: function() {
 		
 		_.bindAll(this);
 	
-	
 	},
 	
 	count: function(conditions) {
-		
 		
 		return this.get("games").filter(conditions).items().length;
 		
@@ -52,7 +45,6 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 		data = _.reduce(data, function(memo, item, index) {
 			item.home_team_abbrev = item.home_team.abbrev;
 			item.score_margin = Math.abs(item.home_team_score - item.away_team_score);
-			
 			var home_outcomes = {
 				"loss": item.away_team,
 				"win": item.home_team,
@@ -60,7 +52,6 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 					abbrev: "TIE"
 				}
 			}
-			
 			item.winner = home_outcomes[item.home_team_outcome];
 			item.winner_abbrev = item.winner.abbrev;
 			memo[index] = item;
@@ -77,8 +68,6 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 			items: data
 		};
 		
-		console.log("data", data);
-		
 		this.model.set("games", new Data.Collection(game_data));
 		
 	},
@@ -88,10 +77,6 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 		this.update();
 		
 		var conditions = this.model.get("conditions");
-		
-		console.log("!", conditions);
-	
-		console.log(this.summarize(conditions));
 		
 		_.fill(this.summarize(conditions));
 		
