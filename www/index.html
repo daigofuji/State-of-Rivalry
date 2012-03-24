@@ -24,14 +24,7 @@
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="js/libs/dropdown.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
-
-
+ 
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -75,32 +68,42 @@
 	</div>
 	
 	<h2>Filter</h2>
+	<form>
+	
+		Runs:
+		<select name="score_margin">
+		  <option value="-">All</option>
+		  <option value="0">Shutouts</option>
+		  <option value="1">One-run game</option>
+		  <option value="5">Blowouts (5 runs)</option>
+		</select>
+		Home team:
+		<select name="home_team_abbrev">
+		  <option value="-">Both</option>
+		  <option value="BAL">BAL</option>
+		  <option value="TAM">TAM</option>
 
-	Runs:
-	<select>
-	  <option value="runall">All</option>
-	  <option value="run0">Shutouts</option>
-	  <option value="run1">One-run game</option>
-	  <option value="run5">Blowouts (5 runs)</option>
-	</select>
-	Home team:
-	<select>
-	  <option value="homeall">Both</option>
-	  <option value="homeny">At New York</option>
-	  <option value="homebos">At Boston</option>
-	</select>
-	Day/Night:
-	<select>
-	  <option value="dnall">Both</option>
-	  <option value="dnday">Day game</option>
-	  <option value="dnnight">Night game</option>
-	</select>
+		  <!--
+<option value="NYY">At New York</option>
+		  <option value="BOS">At Boston</option>
+-->
+		</select>
+		Day/Night:
+		<select name="day_or_night">
+		  <option value="-">Both</option>
+		  <option value="d">Day game</option>
+		  <option value="n">Night game</option>
+		</select>
+	
+	</form>
+	<!-- 
 	Extra innings:
 	<select>
 	  <option value="homeall">Both</option>
 	  <option value="homeny">9-inning game</option>
 	  <option value="homebos">Extra innings</option>
 	</select>
+	-->
 	
 	
 
@@ -116,13 +119,27 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ <!--  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script> -->
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+ <script type="text/javascript" src="js/libs/underscore.min.js"></script>
+		<script type="text/javascript" src="js/libs/backbone.min.js"></script>
+		<script type="text/javascript" src="js/libs/data.min.js"></script>
+		<script type="text/javascript" src="js/query.js"></script>
+
   <!-- end scripts -->
+  
+   <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/libs/dropdown.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
+
+
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
