@@ -79,7 +79,13 @@ rivalry.Matchup = Backbone.Model.extend({
 	
 	
 	
-	}
+	},
+	
+	count: function(conditions) {
+		
+		return this.get("games").filter(conditions).items().length;
+		
+	} 
 	
 })
 
@@ -96,6 +102,8 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 		this.model.on("change", this.render)
 		
 		// $.get("", this.onData);
+		
+		this.onData()
 		
 	},
 	
@@ -135,9 +143,14 @@ rivalry.MatchupExplorer = Backbone.View.extend({
 	
 	summarize: function(conditions) {
 		
-		
+		return {
+			".yankees": this.model.count(_.safe_extend(conditions, { "winners": "Yankees" })),
+			".redsox": this.model.count(_.safe_extend(conditions, { "winners": "Red Sox" })),
+			".total": this.model.count(_.safe_extend(conditions))
+		};
 		
 	},
+	
 	
 	fill: function(elements) {
 	
@@ -168,6 +181,11 @@ _.mixin({
 		}, {});
 		
 		
+	},
+	safe_extend: function(original, values) {
+		
+		return _.extend(_.clone(original), values)
+	
 	}
 });
 
