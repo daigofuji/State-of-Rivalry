@@ -216,11 +216,11 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Daigo Fujiwara for Baseball HackDay 2012
    ========================================================================== */
-
+ img { max-width:100%; }
 body {text-align: center;}
-.wrap {max-width:1000px; margin:0 auto; text-align: left;}
+.wrap {width:100%; margin:0 auto; text-align: left;}
 
 
 /* colors */
@@ -248,12 +248,13 @@ h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .4em
 
 #alltime-score { overflow:hidden; }
 #alltime-score dl {float:left; width: 31%; margin-right:2%;}
+#alltime-score dl, #alltime-score dl dt, #alltime-score dl dd {margin:0; padding:0;}
 #alltime-score dl dd {margin-top:-20px;}
 
 
-.games {padding-top: 10px; }
+.games {padding-top: 10px; overflow:hidden;}
 
-.game { float:left; width: 70px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff;}
+.game { float:left; width: 70px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd;}
 .gamedate {font-size:.9em; color:grey; letter-spacing:-1px;}
 .boswin { border: #d55a1f 1px solid;}
 .nywin { border: #4b99a6 1px solid; }
@@ -284,7 +285,7 @@ header .wrap {text-align:center;}
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-  
+	.wrap {max-width:1000px; margin:0 auto; padding:1em;}  
 	.num {font-size:800%;}
   	
   

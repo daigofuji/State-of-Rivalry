@@ -96,7 +96,7 @@
 	</form>
 	</div>
 	<div class="games">
-		<div class="game boswin"> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		<div class="game boswin"> <div class="gamedate">April 5, 2011</div><div class="gamescore"><span class="ny">NY 1</span> - <span class="bos">BOS 1</span></div></div>
 		
 		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
 	
@@ -112,7 +112,7 @@
 	</div><!-- games -->
 	
 	
-	
+	<div id="infobox"></div>
 	
 	
 	

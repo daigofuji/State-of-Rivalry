@@ -138,14 +138,14 @@ _.mixin({
 
 	$(function() {
 		
-		/*
+		
 
 		rivalry.explorer = new rivalry.MatchupExplorer({ 
 			model: new rivalry.Matchup(),
 			el: $("form")	
 		});
 	
-*/
+
 	});
 
 })(jQuery);
