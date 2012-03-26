@@ -254,8 +254,9 @@ h1, h2 {font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .4em
 
 .games {padding-top: 10px; overflow:hidden;}
 
-.game { float:left; width: 70px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd;}
+.game { float:left; width: 75px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd;}
 .gamedate {font-size:.9em; color:grey; letter-spacing:-1px;}
+.gamescore {font-size:1em; letter-spacing:-1px;}
 .boswin { border: #d55a1f 1px solid;}
 .nywin { border: #4b99a6 1px solid; }
 

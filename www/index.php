@@ -25,7 +25,6 @@
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
- 
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -37,17 +36,33 @@
 	</div>
   </header>
   <div role="main" class="wrap">
-
+  		<div class="debug" style="color:#ccc;">
+		<?php 
+		// is my cached datafile there? and new? 86400 is 24 hours
+		if ( file_exists('data/rivalry.js') && filemtime('data/rivalry.js') > (time()-30)) {
+		   //   if there is a cached version read content and display
+			?>Debug: Cache file is there<?php
+			} else {
+			?>Debug: Cache file is not there and/or old at <?php echo  filemtime('data/rivalry.js'); ?>. Creating new. 
+			<?php
+				echo "<!-- ";
+				// so run the php to write that file
+				 include 'get_data.php';
+				echo "-->";
+			}
+		?>
+		</div>
+  <p>Note: This site is not quite working yet... Will have live data up very soon. For your information, Yankees vs Red Sox all time record at the moment is 1,114 Yankees vs 918 Red Sox, with 14 ties. (State of Rivalry team) </p>
 	
 	<h2>All time score</h2>
 	<div id="alltime-score">	
 		<dl>
-			<dt class="ny">New York</dt>
-			<dd class="num ny">1,114</dd>
+			<dt class="ny">New York Yankees</dt>
+			<dd class="num ny" id="ny_total">1,114</dd>
 		</dl>
 		<dl>
-			<dt class="bos">Boston</dt>
-			<dd class="num bos">918</dd>
+			<dt class="bos">Boston Red Sox</dt>
+			<dd class="num bos" id="bos_total">918</dd>
 		</dl>
 		<dl>
 			<dt class="tie">Tie</dt>
@@ -96,6 +111,7 @@
 	</form>
 	</div>
 	<div class="games">
+	
 		<div class="game boswin"> <div class="gamedate">April 5, 2011</div><div class="gamescore"><span class="ny">NY 1</span> - <span class="bos">BOS 1</span></div></div>
 		
 		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
@@ -149,14 +165,13 @@
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script src="js/libs/dropdown.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
 
 
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    var _gaq=[['_setAccount','UA-339429-13'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
