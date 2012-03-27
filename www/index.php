@@ -54,7 +54,7 @@
 		</div>
   <p>Note: This site is not quite working yet... Will have live data up very soon. For your information, Yankees vs Red Sox all time record at the moment is 1,114 Yankees vs 918 Red Sox, with 14 ties. (State of Rivalry team) </p>
 	
-	<h2>All time score</h2>
+	<h2>All time win-loss record</h2>
 	<div id="alltime-score">	
 		<dl>
 			<dt class="ny">New York Yankees</dt>
@@ -87,12 +87,8 @@
 		Home team:
 		<select name="home_team_abbrev">
 		  <option value="-">Both</option>
-		  <option value="BAL">BAL</option>
-		  <option value="TAM">TAM</option>
-			<!--
 			<option value="NYY">At New York</option>
 			<option value="BOS">At Boston</option>
-			-->
 		</select>
 		Day/Night:
 		<select name="day_or_night">
@@ -108,21 +104,35 @@
 		  <option value="homebos">Extra innings</option>
 		</select>
 		-->	
+		Year: 
+		<select>
+			<option value="-">All time</option>
+		</select>
+		Starting pitcher:
+		<input type="text" name="starting_pitcher" placeholder="Start typing names...">
 	</form>
 	</div>
 	<div class="games">
 	
-		<div class="game boswin"> <div class="gamedate">April 5, 2011</div><div class="gamescore"><span class="ny">NY 1</span> - <span class="bos">BOS 1</span></div></div>
+		<div class="game boswin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 7</span></div></div>
+
+		<div class="game nywin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 6</span> - <span class="bos">BOS 2</span></div></div>
+
+		<div class="game nywin"> <div class="gamedate">Sep 24, 2011</div><div class="gamescore"><span class="ny">NY 9</span> - <span class="bos">BOS 1</span></div></div>
+
+		<div class="game nywin"> <div class="gamedate">Sep 1, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 2</span></div></div>
+
+		<div class="game boswin"> <div class="gamedate">Aug 31, 2011</div><div class="gamescore"><span class="ny">NY 5</span> - <span class="bos">BOS 9</span></div></div>
 		
-		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
-	
-		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		<div class="game nywin"> <div class="gamedate">Aug 30, 2011</div><div class="gamescore"><span class="ny">NY 5</span> - <span class="bos">BOS 2</span></div></div>
 		
-		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		<div class="game boswin"> <div class="gamedate">Aug 7, 2011</div><div class="gamescore"><span class="ny">NY 2</span> - <span class="bos">BOS 3</span></div></div>
 		
-		<div class="game nywin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>
+		<div class="game boswin"> <div class="gamedate">Aug 6, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 10</span></div></div>
+
+		<div class="game nywin"> <div class="gamedate">Aug 5, 2011</div><div class="gamescore"><span class="ny">NY 3</span> - <span class="bos">BOS 2</span></div></div>
 		
-		<div class="game boswin "> <div class="gamedate">April 5, 2011</div><div><span class="ny">1</span> - <span class="bos">1</span></div></div>	
+
 		
 		
 	</div><!-- games -->
