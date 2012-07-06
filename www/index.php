@@ -54,7 +54,7 @@
 			}
 		?>
 		</div>
-  <p class="note">Note: This site is not quite there yet... Working from <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">this Google Doc data</a>, which we got from <a href="http://www.retrosheet.org/">retrosheet</a>. Please report errors to <a href="mailto:daigo@daigofujiwara.com">Daigo</a> </p>
+  <p class="note">Note: This site is not quite there yet... Data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a> from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a> </p>
 	
 	<h2>All time win-loss record</h2>
 	<h3 id="loading"><br/><img src="img/loading.gif" width="16" height="11" /><br/>Loading data...<br/></h3>
