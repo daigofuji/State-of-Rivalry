@@ -1,20 +1,23 @@
-/* Author: Daigo Fujiwara (so far, please add yourself )
+<!DOCTYPE html>
+<html>
+	</head>
+		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic|Balthazar|Six+Caps' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+  <body>
 
-*/
+<p>regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn</p>
 
+    <div id="data"></div>
 
- var a, countw=0, countl=0, countt=0;
+    <script type="text/javascript" src="js/libs/tabletop.js"></script>
+    <script type="text/javascript">
+      var a;
+      window.onload = function() { init() };
 
- $(document).ready(function() {
-		getgames();
-		
-		
-});
-
-     
       var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&output=htm';
 
-      function getgames() {
+      function init() {
         a = Tabletop({
             key: public_spreadsheet_url,
             callback: showInfo,
@@ -26,22 +29,16 @@
 
       function showInfo(data, tabletop) {
         // data comes through as a simple array since simpleSheet is turned on
-        var div = document.getElementById('games'),
+        var div = document.getElementById('data'),
             html = "",
             prop, i;
             
          //regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
 
-   		// create games        
-   		//		<div class="game boswin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 7</span></div></div>
    
         for(i = 0; i < data.length; i++) {
         
-        	//counting
-        	if (data[i].res=="W") {countw++; console.log(countw)}
-        	if (data[i].res=="L") {countl++; console.log(countl)}
-        	if (data[i].res=="T") {countt++; console.log(countt)}
-
+        //		<div class="game boswin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 7</span></div></div>
 		html += '<div class="game ' + data[i].res + ' y'  + data[i].yyyy + ' m'  + data[i].mm + ' d'  + data[i].dd + ' ' + data[i].ha + ' bos' + data[i].soxscor + ' nyy' + data[i].oppscor + ' ' + data[i].dn + ' ex' + data[i].extr + '"> ' ;
 		
 		html += '<div class="gamedate">';
@@ -56,7 +53,7 @@
 			html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
 		} else {
 			html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
-			if(data[i].ha == 'Vs') {html += 'BOS';} else {html += 'NYA';}
+			if(data[i].ha = "Vs") {html += 'NYA';}else {html += 'BOS';}
 			html += data[i].yyyy + '.htm';
 		}
 		
@@ -94,41 +91,13 @@
          // ending game div here
         }
         div.innerHTML = div.innerHTML + html;
-        
-        $('#ny_total').html(number_format(countl));
-		$('#bos_total').html(number_format(countw));
-		$('#tie_total').html(number_format(countt));
-		$('#loading').slideUp();
-		
-
       }
       
       	function pad2(number) {
 			return (number < 10 ? '0' : '') + number
 		}
-
-
-function number_format (number, decimals, dec_point, thousands_sep) {
-    // https://raw.github.com/kvz/phpjs/master/functions/strings/number_format.js
-    // Strip all characters but numerical ones.
-    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-    var n = !isFinite(+number) ? 0 : +number,
-        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-        s = '',
-        toFixedFix = function (n, prec) {
-            var k = Math.pow(10, prec);
-            return '' + Math.round(n * k) / k;
-        };
-    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-    if (s[0].length > 3) {
-        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-    }
-    if ((s[1] || '').length < prec) {
-        s[1] = s[1] || '';
-        s[1] += new Array(prec - s[1].length + 1).join('0');
-    }
-    return s.join(dec);
-}
+      
+      document.write("The published spreadsheet is<a target='_new' href='" + public_spreadsheet_url + "'>" + here + "</a>");    
+    </script>
+  </body>
+</html>

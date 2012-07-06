@@ -51,9 +51,9 @@ body { margin: 0; font-size: 1em; line-height: 1.4; background: #f2f2f2 url('../
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #078; }
+a:visited { color: #8bc; }
+a:hover { color: #034; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -238,7 +238,7 @@ body {text-align: center;}
 .ny.num  {color:#7cc9d1;}
 
 .bos {color:#d55a1f;}
-.bos.num {color:#fab31b;}
+.bos.num {color:#d55a1f;} /* #fab31b */
 
 .tie.num, .num, .tie {color: #939598;}
 h1, h2 { font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2em; text-shadow: 0px -2px 0px #fff;}
@@ -253,13 +253,28 @@ h1, h2 { font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2e
 #alltime-score dl dd {margin-top:-20px;}
 
 
-.games {padding-top: 10px; overflow:hidden;}
+#games {padding-top: 10px; overflow:hidden;}
 
-.game { float:left; width: 78px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd;}
+.game { float:left; width: 78px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd; max-height:42px;
+-webkit-transition: all .5s ease-in-out;
+-moz-transition: all .5s ease-in-out;
+-o-transition: all .5s ease-in-out;
+-ms-transition: all .5s ease-in-out;
+transition: all .5s ease-in-out;
+}
 .gamedate {font-size:.9em; color:grey; letter-spacing:-1px;}
+.gamedate a {color:grey; text-decoration:none;}
+.gamedate a:hover {color:black; text-decoration:underline;}
+
 .gamescore {font-size:1em; letter-spacing:-1px;}
-.boswin { border: #d55a1f 1px solid;}
-.nywin { border: #4b99a6 1px solid; }
+.boswin, .W { border: #d55a1f 1px solid;}
+	.W .ny {color:#bbb;}
+.nywin,  .L { border: #4b99a6 1px solid; }
+	.L .bos {color:#bbb;}
+
+.tied,  .T { border: #999 1px solid; }
+
+#loading {text-align:center;}
 
 footer {
 	margin-top:10em; 
@@ -272,7 +287,7 @@ footer {
 footer .wrap {text-align:right;}
 footer a:link, footer a:active, footer a:visited  { color:#fff; text-decoration: underline; }
 
-
+.note {color:#999;}
 
 
 header .wrap {text-align:center;}

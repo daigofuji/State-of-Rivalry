@@ -38,12 +38,14 @@
   <div role="main" class="wrap">
   		<div class="debug" style="color:#ccc;">
 		<?php 
+		// Data caching but may not have to use... we are switching to google doc-table top model
+		
 		// is my cached datafile there? and new? 86400 is 24 hours
 		if ( file_exists('data/rivalry.js') && filemtime('data/rivalry.js') > (time()-30)) {
 		   //   if there is a cached version read content and display
-			?>Debug: Cache file is there<?php
+			?><!-- Debug: Cache file is there --><?php
 			} else {
-			?>Debug: Cache file is not there and/or old at <?php echo  filemtime('data/rivalry.js'); ?>. Creating new. 
+			?><!-- Debug: Cache file is not there and/or old at <?php echo  filemtime('data/rivalry.js'); ?>. Creating new. -->
 			<?php
 				echo "<!-- ";
 				// so run the php to write that file
@@ -52,21 +54,22 @@
 			}
 		?>
 		</div>
-  <p>Note: This site is not quite working yet... Will have live data up very soon. For your information, Yankees vs Red Sox all time record at the moment is 1,114 Yankees vs 918 Red Sox, with 14 ties. (State of Rivalry team) </p>
+  <p class="note">Note: This site is not quite there yet... Working from <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">this Google Doc data</a>, which we got from <a href="http://www.retrosheet.org/">retrosheet</a>. Please report errors to <a href="mailto:daigo@daigofujiwara.com">Daigo</a> </p>
 	
 	<h2>All time win-loss record</h2>
+	<h3 id="loading"><br/><img src="img/loading.gif" width="16" height="11" /><br/>Loading data...<br/></h3>
 	<div id="alltime-score">	
 		<dl>
 			<dt class="ny">New York Yankees</dt>
-			<dd class="num ny" id="ny_total">1,114</dd>
+			<dd class="num ny" id="ny_total">---</dd>
 		</dl>
 		<dl>
 			<dt class="bos">Boston Red Sox</dt>
-			<dd class="num bos" id="bos_total">918</dd>
+			<dd class="num bos" id="bos_total">---</dd>
 		</dl>
 		<dl>
 			<dt class="tie">Tie</dt>
-			<dd class="num tie">14</dd>
+			<dd class="num tie" id="tie_total">--</dd>
 		</dl>	
 	</div>
 
@@ -74,66 +77,155 @@
 	<div>
 	</div>
 	
-	<h2>Filter</h2>
+	<h2>Filter (*Not working... yet!)</h2>
 	<div>
 	<form>
 		Runs:
 		<select name="score_margin">
 		  <option value="-">All</option>
 		  <option value="0">Shutouts</option>
-		  <option value="1">One-run game</option>
-		  <option value="5">Blowouts (5 runs)</option>
+		  <option value="1">One-run games</option>
+		  <option value="5">Blowouts (+5 runs)</option>
 		</select>
 		Home team:
-		<select name="home_team_abbrev">
+		<select name="ha_value">
 		  <option value="-">Both</option>
-			<option value="NYY">At New York</option>
-			<option value="BOS">At Boston</option>
+			<option value="At">At New York</option>
+			<option value="Vs">At Boston</option>
 		</select>
 		Day/Night:
 		<select name="day_or_night">
 		  <option value="-">Both</option>
-		  <option value="d">Day game</option>
-		  <option value="n">Night game</option>
+		  <option value="day">Day game</option>
+		  <option value="night">Night game</option>
 		</select>
-		<!-- 
-		Extra innings:
-		<select>
-		  <option value="homeall">Both</option>
-		  <option value="homeny">9-inning game</option>
-		  <option value="homebos">Extra innings</option>
-		</select>
-		-->	
+		<!-- Extra innings:
+		<select name="extra">
+		  <option value="exall">All</option>
+		  <option value="noex">9-inning game</option>
+		  <option value="ex">Extra innings</option>
+		</select> -->
 		Year: 
-		<select>
+		<select name="year">
 			<option value="-">All time</option>
+			<option value="y1903">1903</option>
+			<option value="y1904">1904</option>
+			<option value="y1905">1905</option>
+			<option value="y1906">1906</option>
+			<option value="y1907">1907</option>
+			<option value="y1908">1908</option>
+			<option value="y1909">1909</option>
+			<option value="y1910">1910</option>
+			<option value="y1911">1911</option>
+			<option value="y1912">1912</option>
+			<option value="y1913">1913</option>
+			<option value="y1914">1914</option>
+			<option value="y1915">1915</option>
+			<option value="y1916">1916</option>
+			<option value="y1917">1917</option>
+			<option value="y1918">1918</option>
+			<option value="y1919">1919</option>
+			<option value="y1920">1920</option>
+			<option value="y1921">1921</option>
+			<option value="y1922">1922</option>
+			<option value="y1923">1923</option>
+			<option value="y1924">1924</option>
+			<option value="y1925">1925</option>
+			<option value="y1926">1926</option>
+			<option value="y1927">1927</option>
+			<option value="y1928">1928</option>
+			<option value="y1929">1929</option>
+			<option value="y1930">1930</option>
+			<option value="y1931">1931</option>
+			<option value="y1932">1932</option>
+			<option value="y1933">1933</option>
+			<option value="y1934">1934</option>
+			<option value="y1935">1935</option>
+			<option value="y1936">1936</option>
+			<option value="y1937">1937</option>
+			<option value="y1938">1938</option>
+			<option value="y1939">1939</option>
+			<option value="y1940">1940</option>
+			<option value="y1941">1941</option>
+			<option value="y1942">1942</option>
+			<option value="y1943">1943</option>
+			<option value="y1944">1944</option>
+			<option value="y1945">1945</option>
+			<option value="y1946">1946</option>
+			<option value="y1947">1947</option>
+			<option value="y1948">1948</option>
+			<option value="y1949">1949</option>
+			<option value="y1950">1950</option>
+			<option value="y1951">1951</option>
+			<option value="y1952">1952</option>
+			<option value="y1953">1953</option>
+			<option value="y1954">1954</option>
+			<option value="y1955">1955</option>
+			<option value="y1956">1956</option>
+			<option value="y1957">1957</option>
+			<option value="y1958">1958</option>
+			<option value="y1959">1959</option>
+			<option value="y1960">1960</option>
+			<option value="y1961">1961</option>
+			<option value="y1962">1962</option>
+			<option value="y1963">1963</option>
+			<option value="y1964">1964</option>
+			<option value="y1965">1965</option>
+			<option value="y1966">1966</option>
+			<option value="y1967">1967</option>
+			<option value="y1968">1968</option>
+			<option value="y1969">1969</option>
+			<option value="y1970">1970</option>
+			<option value="y1971">1971</option>
+			<option value="y1972">1972</option>
+			<option value="y1973">1973</option>
+			<option value="y1974">1974</option>
+			<option value="y1975">1975</option>
+			<option value="y1976">1976</option>
+			<option value="y1977">1977</option>
+			<option value="y1978">1978</option>
+			<option value="y1979">1979</option>
+			<option value="y1980">1980</option>
+			<option value="y1981">1981</option>
+			<option value="y1982">1982</option>
+			<option value="y1983">1983</option>
+			<option value="y1984">1984</option>
+			<option value="y1985">1985</option>
+			<option value="y1986">1986</option>
+			<option value="y1987">1987</option>
+			<option value="y1988">1988</option>
+			<option value="y1989">1989</option>
+			<option value="y1990">1990</option>
+			<option value="y1991">1991</option>
+			<option value="y1992">1992</option>
+			<option value="y1993">1993</option>
+			<option value="y1994">1994</option>
+			<option value="y1995">1995</option>
+			<option value="y1996">1996</option>
+			<option value="y1997">1997</option>
+			<option value="y1998">1998</option>
+			<option value="y1999">1999</option>
+			<option value="y2000">2000</option>
+			<option value="y2001">2001</option>
+			<option value="y2002">2002</option>
+			<option value="y2003">2003</option>
+			<option value="y2004">2004</option>
+			<option value="y2005">2005</option>
+			<option value="y2006">2006</option>
+			<option value="y2007">2007</option>
+			<option value="y2008">2008</option>
+			<option value="y2009">2009</option>
+			<option value="y2010">2010</option>
+			<option value="y2011">2011</option>
+			<option value="y2012">2012</option>			
 		</select>
 		Starting pitcher:
 		<input type="text" name="starting_pitcher" placeholder="Start typing names...">
 	</form>
 	</div>
-	<div class="games">
 	
-		<div class="game boswin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 7</span></div></div>
-
-		<div class="game nywin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 6</span> - <span class="bos">BOS 2</span></div></div>
-
-		<div class="game nywin"> <div class="gamedate">Sep 24, 2011</div><div class="gamescore"><span class="ny">NY 9</span> - <span class="bos">BOS 1</span></div></div>
-
-		<div class="game nywin"> <div class="gamedate">Sep 1, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 2</span></div></div>
-
-		<div class="game boswin"> <div class="gamedate">Aug 31, 2011</div><div class="gamescore"><span class="ny">NY 5</span> - <span class="bos">BOS 9</span></div></div>
-		
-		<div class="game nywin"> <div class="gamedate">Aug 30, 2011</div><div class="gamescore"><span class="ny">NY 5</span> - <span class="bos">BOS 2</span></div></div>
-		
-		<div class="game boswin"> <div class="gamedate">Aug 7, 2011</div><div class="gamescore"><span class="ny">NY 2</span> - <span class="bos">BOS 3</span></div></div>
-		
-		<div class="game boswin"> <div class="gamedate">Aug 6, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 10</span></div></div>
-
-		<div class="game nywin"> <div class="gamedate">Aug 5, 2011</div><div class="gamescore"><span class="ny">NY 3</span> - <span class="bos">BOS 2</span></div></div>
-		
-
-		
+	<div id="games">
+	
 		
 	</div><!-- games -->
 	
@@ -165,8 +257,10 @@
   <script src="js/script.js"></script>
  <script type="text/javascript" src="js/libs/underscore.min.js"></script>
 		<script type="text/javascript" src="js/libs/backbone.min.js"></script>
-		<script type="text/javascript" src="js/libs/data.min.js"></script>
-		<script type="text/javascript" src="js/query.js"></script>
+		<!-- <script type="text/javascript" src="js/libs/data.min.js"></script>
+		<script type="text/javascript" src="js/query.js"></script> -->
+		<script type="text/javascript" src="js/libs/tabletop.js"></script>
+
 
   <!-- end scripts -->
   
