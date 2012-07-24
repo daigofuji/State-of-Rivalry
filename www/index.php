@@ -57,19 +57,19 @@
   <p class="note">Note: This site is not quite there yet... Data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a> from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a> </p>
 	
 	<h2>All time win-loss record</h2>
-	<h3 id="loading"><br/><img src="img/loading.gif" width="16" height="11" /><br/>Loading data...<br/></h3>
+	<h3 id="loading"><br/><img src="img/ajax-loader.gif" width="220" height="19" /><br/>Loading large data... (Thanks for your patience!)<br/></h3>
 	<div id="alltime-score">	
 		<dl>
 			<dt class="ny">New York Yankees</dt>
-			<dd class="num ny" id="ny_total">---</dd>
+			<dd class="num ny" id="ny_total">..</dd>
 		</dl>
 		<dl>
 			<dt class="bos">Boston Red Sox</dt>
-			<dd class="num bos" id="bos_total">---</dd>
+			<dd class="num bos" id="bos_total">..</dd>
 		</dl>
 		<dl>
 			<dt class="tie">Tie</dt>
-			<dd class="num tie" id="tie_total">--</dd>
+			<dd class="num tie" id="tie_total">.</dd>
 		</dl>	
 	</div>
 
@@ -81,20 +81,20 @@
 	<div>
 	<form>
 		Runs:
-		<select name="score_margin">
+		<select name="score_margin" id="sel-runs">
 		  <option value="-">All</option>
 		  <option value="0">Shutouts</option>
 		  <option value="1">One-run games</option>
 		  <option value="5">Blowouts (+5 runs)</option>
 		</select>
 		Home team:
-		<select name="ha_value">
+		<select name="ha_value" id="sel-ha">
 		  <option value="-">Both</option>
 			<option value="At">At New York</option>
 			<option value="Vs">At Boston</option>
 		</select>
 		Day/Night:
-		<select name="day_or_night">
+		<select name="day_or_night" id="sel-dn">
 		  <option value="-">Both</option>
 		  <option value="day">Day game</option>
 		  <option value="night">Night game</option>
@@ -106,8 +106,8 @@
 		  <option value="ex">Extra innings</option>
 		</select> -->
 		Year: 
-		<select name="year">
-			<option value="-">All time</option>
+		<select name="year" id="sel-year">
+			<option value="all">All time</option>
 			<option value="y1903">1903</option>
 			<option value="y1904">1904</option>
 			<option value="y1905">1905</option>
@@ -219,7 +219,7 @@
 			<option value="y2011">2011</option>
 			<option value="y2012">2012</option>			
 		</select>
-		Starting pitcher:
+		Pitchers with decision:
 		<input type="text" name="starting_pitcher" placeholder="Start typing names...">
 	</form>
 	</div>
@@ -230,8 +230,18 @@
 	</div><!-- games -->
 	
 	
-	<div id="infobox"></div>
-	
+	<div id="tooltip" style="display:none;">
+		<div class="tip">
+			<div class="tip-inner"></div>
+		</div>
+		W: <span id="tip-wpit"></span><br/>
+		L: <span id="tip-lpit"></span><br/>
+		S: <span id="tip-spit"></span><br/>
+		Home team: <span id="tip-hometeam"></span> <br/>
+		Time of game: <span id="tip-time"></span> <br/>
+		Attendance: <span id="tip-spec"></span> <br/>
+		Day/Night: <span id="tip-dn"></span>
+	</div>
 	
 	
 

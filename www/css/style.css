@@ -255,7 +255,7 @@ h1, h2 { font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2e
 
 #games {padding-top: 10px; overflow:hidden;}
 
-.game { float:left; width: 78px; margin: 5px; 10px 5px 0; padding:6px 10px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd; max-height:42px;
+.game { float:left; width: 96px; margin: 5px; 10px 5px 0; padding:6px 6px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd; max-height:42px;
 -webkit-transition: all .5s ease-in-out;
 -moz-transition: all .5s ease-in-out;
 -o-transition: all .5s ease-in-out;
@@ -266,13 +266,23 @@ transition: all .5s ease-in-out;
 .gamedate a {color:grey; text-decoration:none;}
 .gamedate a:hover {color:black; text-decoration:underline;}
 
-.gamescore {font-size:1em; letter-spacing:-1px;}
+.gamescore {font-size:.9em; letter-spacing:-1px;}
 .boswin, .W { border: #d55a1f 1px solid;}
 	.W .ny {color:#bbb;}
 .nywin,  .L { border: #4b99a6 1px solid; }
 	.L .bos {color:#bbb;}
 
 .tied,  .T { border: #999 1px solid; }
+   .extra { color:#666; }
+
+/*Tooltip and Pointer CSS*/
+#tooltip { padding: 5px 5px 3px; width: auto; min-width:78px; background-color:#fff; border: 2px #ccc solid; position: absolute; top: 50px; z-index:1000; font-size:12px; text-align:left; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color:#999;}
+#tooltip span { color:#000; }
+#tooltip .tip, #tooltip .tip-inner { position: absolute; width:0; height:0; border-top-width: 0; background: none; }
+#tooltip .tip { border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 7px solid #ccc; top: -7px; right: auto; left: 50%; margin-left: -5px; }
+#tooltip .tip-inner { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 7px solid #fff; bottom: auto; top: 2px; left: -4px; }
+
+
 
 #loading {text-align:center;}
 

@@ -1,51 +1,98 @@
-/* Author: Daigo Fujiwara (so far, please add yourself )
-
-*/
-
-
- var a, countw=0, countl=0, countt=0;
+/* Author: Daigo Fujiwara (so far, please add yourself ) */
 
  $(document).ready(function() {
 		getgames();
-		
-		
+
+	$("#sel-runs").change(function() {
+		//$(".L").hide();
+		countwinloss();
+	});
+	$("#sel-ha").change(function() {
+		//$(".L").hide();
+		countwinloss();
+	});
+	$("#sel-dn").change(function() {
+		//$(".L").hide();
+		countwinloss();
+	});
+	
+	$("#sel-year").change(function() {
+		//console.log($(this).val());
+		if ($("#sel-year").val() === "all") { 
+			$(".games").show(); 
+		} else {
+			$(".games").hide();
+			//$(".games."+$(this).val()).show();
+		}
+		countwinloss();
+	});
+	
 });
 
-     
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&output=htm';
 
-      function getgames() {
-        a = Tabletop({
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&output=htm';
+
+function getgames() {
+        var a = Tabletop({
             key: public_spreadsheet_url,
             callback: showInfo,
             simpleSheet: true
         });
-      }
+}
 
-      var count = 0;
+var count = 0;
 
-      function showInfo(data, tabletop) {
-        // data comes through as a simple array since simpleSheet is turned on
+function showInfo(data, tabletop) {
+// data comes through as a simple array since simpleSheet is turned on
         var div = document.getElementById('games'),
             html = "",
             prop, i;
             
          //regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
 
-   		// create games        
-   		//		<div class="game boswin"> <div class="gamedate">Sep 25, 2011</div><div class="gamescore"><span class="ny">NY 4</span> - <span class="bos">BOS 7</span></div></div>
-   
-        for(i = 0; i < data.length; i++) {
-        
-        	//counting
-        	if (data[i].res=="W") {countw++; console.log(countw)}
-        	if (data[i].res=="L") {countl++; console.log(countl)}
-        	if (data[i].res=="T") {countt++; console.log(countt)}
+	// creating games
 
-		html += '<div class="game ' + data[i].res + ' y'  + data[i].yyyy + ' m'  + data[i].mm + ' d'  + data[i].dd + ' ' + data[i].ha + ' bos' + data[i].soxscor + ' nyy' + data[i].oppscor + ' ' + data[i].dn + ' ex' + data[i].extr + '"> ' ;
+	//var a, countw=0, countl=0, countt=0;
+
+	for(i = 0; i < data.length; i++) {
+        
+		//counting
+		//if (data[i].res==="W") {countw++; } //console.log(countw);
+		//if (data[i].res==="L") {countl++; } //console.log(countl)
+		//if (data[i].res==="T") {countt++; } //console.log(countt)
+
+		html += '<div class="game ' + data[i].res +' y'+ data[i].yyyy +' '+ data[i].ha +' '+ data[i].dn +'"';
+
+		//start loading the database info on this div -- used by infobox
+		html += 'data-res="' + data[i].res + '"';
+		html += 'data-year="' + data[i].yyyy + '"';
+
+		html += 'data-mm="' + data[i].mm + '"';
+		html += 'data-dd="' + data[i].dd + '"';
+		html += 'data-dbl="' + data[i].dbl + '"';
+		html += 'data-soxscor="' + data[i].soxscor + '"';
+		html += 'data-oppscor="' + data[i].oppscor + '"';
+		html += 'data-rundiff="' + (data[i].soxscor - data[i].oppscor) + '"';
+
+		if(data[i].extr) { html += 'data-extr="' + data[i].extr + '"'; } else {html += 'data-extr=""'; }
 		
+		
+		html += 'data-ha="' + data[i].ha + '"';
+		//
+		if(data[i].ha === "Vs") {html += 'data-hometeam="Boston"'; }
+			else if (data[i].ha === "At") {html += 'data-hometeam="New York"'; }
+				else  {html += 'data-hometeam="N/A"'; }
+		if(data[i].wpit) { html += 'data-wpit="' + data[i].wpit + '"'; } else {html += 'data-wpit="N/A"'; }
+		if(data[i].lpit) { html += 'data-lpit="' + data[i].lpit + '"'; } else {html += 'data-lpit="N/A"'; }
+		if(data[i].spit) { html += 'data-spit="' + data[i].spit + '"'; } else {html += 'data-spit="-"'; }
+		if(data[i].spec) { html += 'data-spec="' + number_format(data[i].spec) + '"'; } else {html += 'data-spec="N/A"'; }
+		if(data[i].time) { html += 'data-time="' + data[i].time + '"'; } else {html += 'data-time="N/A"'; }
+		if(data[i].dn) { html += 'data-dn="' + data[i].dn + '"'; } else {html += 'data-dn="N/A"'; }
+		
+		
+		html += '>'; // end beginning of div
 		html += '<div class="gamedate">';
-		
+
 		//link to retrosheet 
 		
 		html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
@@ -56,7 +103,7 @@
 			html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
 		} else {
 			html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
-			if(data[i].ha == 'Vs') {html += 'BOS';} else {html += 'NYA';}
+			if(data[i].ha === 'Vs') {html += 'BOS';} else {html += 'NYA';}
 			html += data[i].yyyy + '.htm';
 		}
 		
@@ -82,30 +129,64 @@
 		
 		
 		
-		html += data[i].dd + ', ' + data[i].yyyy +'</a></div>';
-        
-        html += '<div class="gamescore"><span class="bos">BOS ' + data[i].soxscor +'</span>-<span class="ny">NY '+ data[i].oppscor  + '</span></div>'
-        /*
-          for(prop in data[i]) {
-            html = html + "&nbsp;-&nbsp;" + data[i][prop];
-          }
-         */ 
-          html = html + "</div>";
-         // ending game div here
-        }
-        div.innerHTML = div.innerHTML + html;
-        
-        $('#ny_total').html(number_format(countl));
+		html += data[i].dd + ', ' + data[i].yyyy +'</a></div>'; // end game date
+
+		html += '<div class="gamescore"><span class="bos">BOS ' + data[i].soxscor +'</span>-<span class="ny">NY '+ data[i].oppscor  + '</span>'; 
+		//if extra innings 
+		if (data[i].extr){ html += ' <span class="extra">(' + data[i].extr + ')</span>';}
+		
+		html += '</div>'; //end game score
+
+
+		html = html + "</div>";
+		// ending game div here
+		}
+		div.innerHTML = div.innerHTML + html;
+
+		//$('#ny_total').html(number_format(countl));
+		//$('#bos_total').html(number_format(countw));
+		//$('#tie_total').html(number_format(countt));
+			countwinloss();
+
+		//enable tooltip 
+		$(".game").hover( function () {
+				$("#tip-wpit").text($(this).attr("data-wpit"));
+				$("#tip-lpit").text($(this).attr("data-lpit"));
+				$("#tip-spit").text($(this).attr("data-spit"));
+				$("#tip-hometeam").text($(this).attr("data-hometeam"));
+				$("#tip-time").text($(this).attr("data-time").replace(/(\s+)?:00$/, ""));
+				$("#tip-spec").text($(this).attr("data-spec"));
+				$("#tip-dn").text($(this).attr("data-dn"));
+				
+				var leftposition = $(this).offset().left;
+				var thisw = $(this).width()/2;
+				var tipw = $("#tooltip").width()/2;
+				var tipx = leftposition + thisw - tipw -4;
+				$("#tooltip").css("left", tipx + "px"); 
+				
+				var tipy = $(this).offset().top + $(this).height() + 8;
+				$("#tooltip").css("top", tipy + "px");
+		
+				$("#tooltip").fadeIn("fast");
+			}, function (){
+				$("#tooltip").hide();
+		});
+
+
+		// remove loading
+		$('#loading').slideUp();
+}
+
+function countwinloss() {
+var countl = $(".L:visible").length, countw = $(".W:visible").length, countt = $(".T:visible").length; 
+		$('#ny_total').html(number_format(countl));
 		$('#bos_total').html(number_format(countw));
 		$('#tie_total').html(number_format(countt));
-		$('#loading').slideUp();
-		
-
-      }
-      
-      	function pad2(number) {
-			return (number < 10 ? '0' : '') + number
-		}
+}
+   
+function pad2(number) {
+	return (number < 10 ? '0' : '') + number
+}
 
 
 function number_format (number, decimals, dec_point, thousands_sep) {
