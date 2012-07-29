@@ -32,23 +32,34 @@
 		html += '<div class="gamedate">';
 		
 		//link to retrosheet 
+
 		
-		html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
-		;
-		
-		//before 1917 redirect to game page
-		if(data[i].yyyy < 1918){
-			html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
-		} else {
-			html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
-			if(data[i].ha = "Vs") {html += 'NYA';}else {html += 'BOS';}
-			html += data[i].yyyy + '.htm';
-		}
-		
-		
+		if (data[i].yyyy == 2012) {
+				// 2012 season, send it to baseball reference
+				html += '<a href="http://www.baseball-reference.com/boxes/';
+					if(data[i].ha = "Vs") {html += 'BOS/BOS';}else {html += 'NYA/NYA';}
+					html += data[i].yyyy + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl + '.shtml';
+				html += '" target ="_blank">';
+		}else {		
+
+			html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
+			;
+			
+			//before 1917 redirect to game page
+			if(data[i].yyyy < 1918){
+				html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
+			} else {
+	
+					// default to the retrosheet box score
+					html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
+					if(data[i].ha = "Vs") {html += 'NYA';}else {html += 'BOS';}
+					html += data[i].yyyy + '.htm';
+			}		
 		html += '" target ="_blank">';
 		//end link
-		
+	
+		} // end else on baseball-reference part
+	
 		//covert month name
 		switch (data[i].mm) {
 			case '1' : html += 'Jan '; break;

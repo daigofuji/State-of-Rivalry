@@ -3,29 +3,11 @@
  $(document).ready(function() {
 		getgames();
 
-	$("#sel-runs").change(function() {
-		//$(".L").hide();
+	$("#sel-runs", "#sel-ha", "#sel-dn", "#sel-year", "#sel-mm", "#sel-dd").change(function() {
+		filtergames();
 		countwinloss();
 	});
-	$("#sel-ha").change(function() {
-		//$(".L").hide();
-		countwinloss();
-	});
-	$("#sel-dn").change(function() {
-		//$(".L").hide();
-		countwinloss();
-	});
-	
-	$("#sel-year").change(function() {
-		//console.log($(this).val());
-		if ($("#sel-year").val() === "all") { 
-			$(".games").show(); 
-		} else {
-			$(".games").hide();
-			//$(".games."+$(this).val()).show();
-		}
-		countwinloss();
-	});
+
 	
 });
 
@@ -74,7 +56,13 @@ function showInfo(data, tabletop) {
 		html += 'data-oppscor="' + data[i].oppscor + '"';
 		html += 'data-rundiff="' + (data[i].soxscor - data[i].oppscor) + '"';
 
-		if(data[i].extr) { html += 'data-extr="' + data[i].extr + '"'; } else {html += 'data-extr=""'; }
+		//shutouts?
+		if(data[i].soxscor == 0 || data[i].oppscor == 0) { html += 'data-shut="1"'; } else {html += 'data-shut="0"'; }
+		//blowouts?
+		if(data[i].soxscor - data[i].oppscor > 4 || data[i].soxscor - data[i].oppscor < -4) { html += 'data-blow="1"'; } else {html += 'data-blow="0"'; }
+		//one run?
+		if(data[i].soxscor - data[i].oppscor == 1 || data[i].soxscor - data[i].oppscor == -1) { html += 'data-one="1"'; } else {html += 'data-one="0"'; }
+
 		
 		
 		html += 'data-ha="' + data[i].ha + '"';
@@ -94,23 +82,30 @@ function showInfo(data, tabletop) {
 		html += '<div class="gamedate">';
 
 		//link to retrosheet 
+		//wait, retrosheet only does past year, current year, send it to baseball-reference
+		if (data[i].yyyy === "2012") {
+				html += '<a href="http://www.baseball-reference.com/boxes/';
+					if(data[i].ha === "Vs") {html += 'NYA/NYA';}else {html += 'BOS/BOS';}
+					html += data[i].yyyy + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl + '.shtml';
+				html += '" target ="_blank">';
+		}else {		
+		//by default, links to retrosheet	
+			html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
+			;
+			//before 1917 redirect to game page
+				if(data[i].yyyy < 1918){
+					html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
+				} else {
+			//boxscore page
+					html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
+					if(data[i].ha === 'Vs') {html += 'BOS';} else {html += 'NYA';}
+					html += data[i].yyyy + '.htm';
+				}
+			html += '" target ="_blank">';
+			//end link to retrosheet
 		
-		html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
-		;
-		
-		//before 1917 redirect to game page
-		if(data[i].yyyy < 1918){
-			html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
-		} else {
-			html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
-			if(data[i].ha === 'Vs') {html += 'BOS';} else {html += 'NYA';}
-			html += data[i].yyyy + '.htm';
-		}
-		
-		
-		html += '" target ="_blank">';
-		//end link
-		
+		}// end link to retrosheet or baseball-reference
+			
 		//covert month name
 		switch (data[i].mm) {
 			case '1' : html += 'Jan '; break;
@@ -177,6 +172,31 @@ function showInfo(data, tabletop) {
 		$('#loading').slideUp();
 }
 
+
+function filtergames(){
+	//$("#sel-runs").val();
+	//$("#sel-ha").val();
+	//$("#sel-dn").val();
+
+ //regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
+   $('.game').show();
+	   if ($('#sel-runs').val() === 'all') { 
+			// do nothing!
+		} else {
+			//console.log("you selected " + $('#sel-runs').val() );
+			// sel runs values are shut one and blow
+			 $('[data-'+$('#sel-runs').val()+'="0"]').hide();
+		}
+		if ($('#sel-ha').val() === 'all') {
+			//do nothing!
+		} else {
+			// first hide  N/As
+			 $('[data-ha="N/A"]').hide();
+			 $('[data-ha="'+ $('#sel-ha').val()+'"]').hide();
+		}
+}
+
+
 function countwinloss() {
 var countl = $(".L:visible").length, countw = $(".W:visible").length, countt = $(".T:visible").length; 
 		$('#ny_total').html(number_format(countl));
@@ -185,7 +205,7 @@ var countl = $(".L:visible").length, countw = $(".W:visible").length, countt = $
 }
    
 function pad2(number) {
-	return (number < 10 ? '0' : '') + number
+	return (number < 10 ? '0' : '') + number;
 }
 
 
