@@ -3,7 +3,8 @@
  $(document).ready(function() {
 		getgames();
 
-	$("#sel-runs", "#sel-ha", "#sel-dn", "#sel-year", "#sel-mm", "#sel-dd").change(function() {
+	$(".filter").change(function() {
+		//console.log("changed");
 		filtergames();
 		countwinloss();
 	});
@@ -168,6 +169,8 @@ function showInfo(data, tabletop) {
 		});
 
 
+
+
 		// remove loading
 		$('#loading').slideUp();
 }
@@ -179,7 +182,9 @@ function filtergames(){
 	//$("#sel-dn").val();
 
  //regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
-   $('.game').show();
+ 	//first shaw all the games
+   	$('.game').show();
+   		//runs?
 	   if ($('#sel-runs').val() === 'all') { 
 			// do nothing!
 		} else {
@@ -187,6 +192,7 @@ function filtergames(){
 			// sel runs values are shut one and blow
 			 $('[data-'+$('#sel-runs').val()+'="0"]').hide();
 		}
+		//Home or away?
 		if ($('#sel-ha').val() === 'all') {
 			//do nothing!
 		} else {
@@ -194,15 +200,32 @@ function filtergames(){
 			 $('[data-ha="N/A"]').hide();
 			 $('[data-ha="'+ $('#sel-ha').val()+'"]').hide();
 		}
+		//is it day/night?
+		if ($('#sel-dn').val() === 'all') {
+			//do nothing!
+		} else {
+			// first hide  N/As
+			 $('[data-dn="N/A"]').hide();
+			 $('[data-dn="'+ $('#sel-dn').val()+'"]').hide();
+		}
+		//change this to range
+		
 }
 
 
 function countwinloss() {
-var countl = $(".L:visible").length, countw = $(".W:visible").length, countt = $(".T:visible").length; 
-		$('#ny_total').html(number_format(countl));
-		$('#bos_total').html(number_format(countw));
-		$('#tie_total').html(number_format(countt));
-}
+var countl = $(".L:visible").length, 
+	countw = $(".W:visible").length, 
+	countt = $(".T:visible").length; 
+var tot = countw+countl+countt;
+		$('#ny_total').html(number_format(countl)+'<span></span>');
+			$('#ny_total span').html(' ('+number_format(countl/tot*100, 1)+'%)');
+		$('#bos_total').html(number_format(countw)+'<span></span>');
+			$('#bos_total span').html(' ('+number_format(countw/tot*100, 1)+'%)');
+		$('#tie_total').html(number_format(countt)+'<span></span>');
+			$('#tie_total span').html(' ('+number_format(countt/tot*100, 1)+'%)');
+		$('#game_total').html(number_format(tot));
+}		
    
 function pad2(number) {
 	return (number < 10 ? '0' : '') + number;

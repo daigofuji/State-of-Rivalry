@@ -12,8 +12,8 @@
        More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>State of Rivalry</title>
-  <meta name="description" content="">
+  <title>State of Rivalry: All-time Red Sox vs Yankees scorecard</title>
+  <meta name="description" content="All-time win-loss record of the Boston Red Sox and the New York Yankees, with details. Project of Boston Baseball Hack Day 2012.">
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
@@ -56,7 +56,7 @@
 		</div>
   <p class="note">Note: This site is not quite there yet... Data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a> from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a> </p>
 	
-	<h2>All time win-loss record</h2>
+	<h2>All-time win-loss record <em>(Total number of games: <span id="game_total">..</span>)</em></h2>
 	<h3 id="loading"><br/><img src="img/ajax-loader.gif" width="220" height="19" /><br/>Loading large data... (Thanks for your patience!)<br/></h3>
 	<div id="alltime-score">	
 		<dl>
@@ -77,25 +77,26 @@
 	<div>
 	</div>
 	
-	<h2>Filter (*Not working... yet!)</h2>
+	<h2>Filter*</h2>
+	<p class="note">* Not quite perfect yet. If you are using this for reference, always double check the <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">data</a></p>
 	<div>
 	<form>
 		Runs:
-		<select name="score_margin" id="sel-runs">
+		<select name="score_margin" id="sel-runs" class="filter">
 		  <option value="all">All</option>
 		  <option value="shut">Shutouts</option>
 		  <option value="one">One-run games</option>
 		  <option value="blow">Blowouts (+5 runs)</option>
 		</select>
 		Home team:
-		<select name="ha_value" id="sel-ha">
+		<select name="ha_value" id="sel-ha" class="filter">
 		  <option value="all">Both</option> 
 		  <!-- the values are purposefully swapped, because I need to select what to hide! -->
 			<option value="Vs">At New York</option>
 			<option value="At">At Boston</option>
 		</select>
 		Day/Night:
-		<select name="day_or_night" id="sel-dn">
+		<select name="day_or_night" id="sel-dn" class="filter">
 		  <option value="all">Both</option>
 		  <!-- the values are purposefully swapped, because I need to select what to hide! -->
 		  <option value="night">Day game</option>
@@ -108,7 +109,7 @@
 		  <option value="ex">Extra innings</option>
 		</select> -->
 		Year: 
-		<select name="year" id="sel-year">
+		<select name="year" id="sel-year" class="filter">
 			<option value="all">All time</option>
 			<option value="1903">1903</option>
 			<option value="1904">1904</option>
@@ -222,22 +223,24 @@
 			<option value="2012">2012</option>			
 		</select>
 		Month: 
-		<select name="month" id="sel-mm">	
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			<option value="11">11</option>
-			<option value="12">12</option>
+		<select name="month" id="sel-mm" class="filter">
+			<option value="all">All</option>
+			<option value="1">Jan.</option>
+			<option value="2">Feb.</option>
+			<option value="3">Mar.</option>
+			<option value="4">Apr.</option>
+			<option value="5">May</option>
+			<option value="6">June</option>
+			<option value="7">July</option>
+			<option value="8">Aug.</option>
+			<option value="9">Sept.</option>
+			<option value="10">Oct.</option>
+			<option value="11">Nov.</option>
+			<option value="12">Dec</option>
 		</select>
+		<!--
 		Day: 
-		<select name="day" id="sel-dd">
+		<select name="day" id="sel-dd" class="filter">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -271,7 +274,7 @@
 			<option value="31">31</option>
 
 		</select>
-		
+		-->
 		Pitchers with decision:
 		<input type="text" name="starting_pitcher" placeholder="Start typing names...">
 	</form>
