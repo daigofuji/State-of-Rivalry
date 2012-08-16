@@ -9,6 +9,8 @@
 		countwinloss();
 	});
 
+	$('.piety').peity("pie")
+  	.bind("chart:changed", chartUpdate)
 	
 });
 
@@ -208,8 +210,18 @@ function filtergames(){
 			 $('[data-dn="N/A"]').hide();
 			 $('[data-dn="'+ $('#sel-dn').val()+'"]').hide();
 		}
-		//change this to range
-		
+		//SELECTED YEAR change this to range
+		if ($('#sel-year').val() === 'all') {
+			//do nothing!
+		} else {
+			 $('.game:not([data-year="'+ $('#sel-year').val()+'"])').hide();
+		}
+		//SELECTED month change this to range
+		if ($('#sel-mm').val() === 'all') {
+			//do nothing!
+		} else {
+			 $('.game:not([data-mm="'+ $('#sel-mm').val()+'"])').hide();
+		}	
 }
 
 

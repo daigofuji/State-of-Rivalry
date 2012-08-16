@@ -321,12 +321,13 @@
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
- <script type="text/javascript" src="js/libs/underscore.min.js"></script>
+ 		<script type="text/javascript" src="js/libs/underscore.min.js"></script>
 		<script type="text/javascript" src="js/libs/backbone.min.js"></script>
 		<!-- <script type="text/javascript" src="js/libs/data.min.js"></script>
 		<script type="text/javascript" src="js/query.js"></script> -->
 		<script type="text/javascript" src="js/libs/tabletop.js"></script>
-
+		<!-- peity -->
+		<script type="text/javascript" src="js/libs/jquery.peity.min.js"></script>
 
   <!-- end scripts -->
   
