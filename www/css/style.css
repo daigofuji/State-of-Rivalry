@@ -224,7 +224,7 @@ body {text-align: center;}
 
 
 /* colors */
-.main-bg { background-color: #f2f2f2; }
+.main-bg { background-color: #f4f4f4; }
 
 .brown {color:#7f472e;}
 .orange {color:#d55a1f;}
@@ -243,43 +243,57 @@ body {text-align: center;}
 .tie.num, .num, .tie {color: #939598;}
 h1, h2 { font-family: 'Balthazar', serif; font-weight:normal; margin-bottom: .2em; text-shadow: 0px -2px 0px #fff;}
 	h2 em { color: #999; font-size:95%; }
+	h2 .smaller { font-size:80%; }
 .num { font-family: 'Six Caps', sans-serif; font-size:500%; text-shadow: 0px -2px 0px #fff;}
 .num span {font-size:35%;}
 
 
 #alltime-score { overflow:hidden; }
-#alltime-score dl {float:left; width: 31%; margin-right:2%;}
+#alltime-score dl {float:left; width: 35%; margin-right:2%;}
+#alltime-score dl.narrow {width: 25%; margin-right:0;}
 #alltime-score dl, #alltime-score dl dt, #alltime-score dl dd {margin:0; padding:0;}
-#alltime-score dl dd {margin-top:-20px;}
-#alltime-score dl dt {font-size:150%; text-shadow: 0px -2px 0px #fff;}
+#alltime-score dl dd {margin-top:-20px; white-space:nowrap; text-align:center;}
+#alltime-score dl dt {text-shadow: 0px -2px 0px #fff; text-align:center;}
  
 #games {padding-top: 10px; overflow:hidden;}
 
-.game { float:left; width: 96px; margin: 5px; 10px 5px 0; padding:6px 6px; background: #fff; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd; max-height:42px;
+.game { float:left; width: 96px; margin: 5px; 10px 5px 0; padding:4px 0; background: #f1f1f1; -moz-box-shadow: 2px 2px 1px 1px #ddd; -webkit-box-shadow: 2px 2px 1px 1px #ddd; box-shadow: 2px 2px 1px 1px #ddd; max-height:42px; white-space:nowrap; text-align:center; text-shadow: 0px -1px 0px #fff;
 -webkit-transition: all .5s ease-in-out;
 -moz-transition: all .5s ease-in-out;
 -o-transition: all .5s ease-in-out;
 -ms-transition: all .5s ease-in-out;
 transition: all .5s ease-in-out;
+/* gradient */
+background: #f1f1f1;
+background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee));
+background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
 }
-.gamedate {font-size:.9em; color:grey; letter-spacing:-1px;}
-.gamedate a {color:grey; text-decoration:none;}
+.game:hover { background: #fff;}
+.gamedate {color:grey; letter-spacing:-1px;}
+.gamedate a {color:#444; text-decoration:none;}
 .gamedate a:hover {color:black; text-decoration:underline;}
 
-.gamescore {font-size:.9em; letter-spacing:-1px;}
+.gamescore { letter-spacing:-1px;}
 .boswin, .W { border: #d55a1f 1px solid;}
-	.W .ny {color:#bbb;}
+	.W .ny {color:#aaa;}
 .nywin,  .L { border: #4b99a6 1px solid; }
-	.L .bos {color:#bbb;}
+	.L .bos {color:#aaa;}
 
 .tied,  .T { border: #999 1px solid; }
    .extra { color:#666; }
 
 /*Tooltip and Pointer CSS*/
-#tooltip { padding: 5px 5px 3px; width: auto; min-width:78px; background-color:#fff; border: 2px #ccc solid; position: absolute; top: 50px; z-index:1000; font-size:12px; text-align:left; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color:#999;}
+#tooltip { padding: 10px 10px 6px; width: auto; min-width:78px; background-color:#fff; border: 2px #888 solid; position: absolute; top: 50px; z-index:1000; font-size:13px; text-align:left; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color:#999; -webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.75);
+box-shadow:         1px 1px 3px rgba(50, 50, 50, 0.75);}
 #tooltip span { color:#000; }
 #tooltip .tip, #tooltip .tip-inner { position: absolute; width:0; height:0; border-top-width: 0; background: none; }
-#tooltip .tip { border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 7px solid #ccc; top: -7px; right: auto; left: 50%; margin-left: -5px; }
+#tooltip .tip { border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 7px solid #888; top: -7px; right: auto; left: 50%; margin-left: -5px; }
 #tooltip .tip-inner { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 7px solid #fff; bottom: auto; top: 2px; left: -4px; }
 
 
@@ -371,12 +385,13 @@ select[readonly] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 700px) {
   /* Style adjustments for viewports that meet the condition */
 	.wrap {max-width:1000px; margin:0 auto; padding:1em;}  
 	.num {font-size:900%;}
-  	
-  
+  	#alltime-score dl dt {font-size:150%;}
+  	#loading {font-size:180%;}
+
 }
 
 
