@@ -54,10 +54,10 @@
 			}
 		?>
 		</div>
-  <p class="note">Note: This site is not quite there yet... Data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a> from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a> </p>
+  <p class="note"><strong>Note:</strong> Thanks for visiting! This site is still in beta. If you are using this for reference, always double check the data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a>, gathered from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day 2012</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a>. Thank you.</p>
 	
 	<h2>All-time win-loss record <em>(Total number of games: <span id="game_total">..</span>)</em></h2>
-	<h3 id="loading"><br/><img src="img/ajax-loader.gif" width="220" height="19" /><br/>Loading large data... (Thanks for your patience!)<br/></h3>
+	<h3 id="loading"><br/><img src="img/ajax-loader.gif" width="220" height="19" /><br/>Loading over 2,000 game data... (Thanks for your patience!)<br/></h3>
 	<div id="alltime-score">	
 		<dl>
 			<dt class="ny">New York Yankees</dt>
@@ -77,8 +77,7 @@
 	<div>
 	</div>
 	
-	<h2>Filter*</h2>
-	<p class="note">* Not quite perfect yet. If you are using this for reference, always double check the <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">data</a></p>
+	<h2>Filter</h2>
 	<div>
 	<form>
 		Runs:
@@ -90,17 +89,16 @@
 		</select>
 		Home team:
 		<select name="ha_value" id="sel-ha" class="filter">
-		  <option value="all">Both</option> 
-		  <!-- the values are purposefully swapped, because I need to select what to hide! -->
-			<option value="Vs">At New York</option>
-			<option value="At">At Boston</option>
+		  <option value="all">Both</option>
+		  	<!-- data is boston centric, so At NYA is NY Vs NYA is in Bos --> 
+			<option value="At">At New York</option>
+			<option value="Vs">At Boston</option>
 		</select>
 		Day/Night:
 		<select name="day_or_night" id="sel-dn" class="filter">
 		  <option value="all">Both</option>
-		  <!-- the values are purposefully swapped, because I need to select what to hide! -->
-		  <option value="night">Day game</option>
-		  <option value="day">Night game</option>
+		  <option value="day">Day game</option>
+		  <option value="night">Night game</option>
 		</select>
 		<!-- Extra innings:
 		<select name="extra">
@@ -108,6 +106,7 @@
 		  <option value="noex">9-inning game</option>
 		  <option value="ex">Extra innings</option>
 		</select> -->
+		<br/>
 		Year: 
 		<select name="year" id="sel-year" class="filter">
 			<option value="all">All time</option>
@@ -225,9 +224,9 @@
 		Month: 
 		<select name="month" id="sel-mm" class="filter">
 			<option value="all">All</option>
-			<option value="1">Jan.</option>
+			<!-- <option value="1">Jan.</option>
 			<option value="2">Feb.</option>
-			<option value="3">Mar.</option>
+			<option value="3">Mar.</option> -->
 			<option value="4">Apr.</option>
 			<option value="5">May</option>
 			<option value="6">June</option>
@@ -236,8 +235,15 @@
 			<option value="9">Sept.</option>
 			<option value="10">Oct.</option>
 			<option value="11">Nov.</option>
-			<option value="12">Dec</option>
+			<!-- <option value="12">Dec</option> -->
 		</select>
+		Playoff games: 
+		<select name="playoff" id="sel-playoff" class="filter">
+			<option value="all">Both</option>
+			<option value="0">Regular Season</option>
+			<option value="1">Playoff only</option>
+		</select>
+		
 		<!--
 		Day: 
 		<select name="day" id="sel-dd" class="filter">
@@ -274,9 +280,9 @@
 			<option value="31">31</option>
 
 		</select>
-		-->
+		
 		Pitchers with decision:
-		<input type="text" name="starting_pitcher" placeholder="Start typing names...">
+		<input type="text" name="starting_pitcher" placeholder="Start typing names...">-->
 	</form>
 	</div>
 	

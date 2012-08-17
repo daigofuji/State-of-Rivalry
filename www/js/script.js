@@ -9,8 +9,7 @@
 		countwinloss();
 	});
 
-	$('.piety').peity("pie")
-  	.bind("chart:changed", chartUpdate)
+	
 	
 });
 
@@ -51,7 +50,7 @@ function showInfo(data, tabletop) {
 		//start loading the database info on this div -- used by infobox
 		html += 'data-res="' + data[i].res + '"';
 		html += 'data-year="' + data[i].yyyy + '"';
-
+		html += 'data-playoff="' + data[i].playoff + '"';
 		html += 'data-mm="' + data[i].mm + '"';
 		html += 'data-dd="' + data[i].dd + '"';
 		html += 'data-dbl="' + data[i].dbl + '"';
@@ -198,17 +197,15 @@ function filtergames(){
 		if ($('#sel-ha').val() === 'all') {
 			//do nothing!
 		} else {
-			// first hide  N/As
-			 $('[data-ha="N/A"]').hide();
-			 $('[data-ha="'+ $('#sel-ha').val()+'"]').hide();
+			// hide if the selection (Vs/At) does not match 
+			 $('.game:not([data-ha="'+ $('#sel-ha').val()+'"])').hide();
 		}
 		//is it day/night?
 		if ($('#sel-dn').val() === 'all') {
-			//do nothing!
+			//do nothing! Show all
 		} else {
-			// first hide  N/As
-			 $('[data-dn="N/A"]').hide();
-			 $('[data-dn="'+ $('#sel-dn').val()+'"]').hide();
+			//hide unmatch
+			 $('.game:not([data-dn="'+ $('#sel-dn').val()+'"])').hide();
 		}
 		//SELECTED YEAR change this to range
 		if ($('#sel-year').val() === 'all') {
@@ -222,21 +219,36 @@ function filtergames(){
 		} else {
 			 $('.game:not([data-mm="'+ $('#sel-mm').val()+'"])').hide();
 		}	
+		//Playoff?
+		if ($('#sel-playoff').val() === 'all') {
+			//do nothing!
+		} else {
+			 $('.game:not([data-playoff="'+ $('#sel-playoff').val()+'"])').hide();
+		}	
 }
 
 
 function countwinloss() {
-var countl = $(".L:visible").length, 
-	countw = $(".W:visible").length, 
-	countt = $(".T:visible").length; 
-var tot = countw+countl+countt;
+	var countl = $(".L:visible").length, 
+		countw = $(".W:visible").length, 
+		countt = $(".T:visible").length; 
+	var tot = countw+countl+countt;
 		$('#ny_total').html(number_format(countl)+'<span></span>');
-			$('#ny_total span').html(' ('+number_format(countl/tot*100, 1)+'%)');
+			$('#ny_total span').html(' '+number_format(countl/tot*100, 1)+'% <em class="peity" data-diameter="35" data-colour="#7cc9d1">'+countl+'/'+tot+'</em>');
 		$('#bos_total').html(number_format(countw)+'<span></span>');
-			$('#bos_total span').html(' ('+number_format(countw/tot*100, 1)+'%)');
+			$('#bos_total span').html(' '+number_format(countw/tot*100, 1)+'% <em class="peity" data-diameter="35" data-colour="#d55a1f">'+countw+'/'+tot+'</em>');
 		$('#tie_total').html(number_format(countt)+'<span></span>');
-			$('#tie_total span').html(' ('+number_format(countt/tot*100, 1)+'%)');
+			$('#tie_total span').html(' '+number_format(countt/tot*100, 1)+'% <em class="peity" data-diameter="25" data-colour="#939598">'+countt+'/'+tot+'</em>');
 		$('#game_total').html(number_format(tot));
+		
+	$('em.peity').peity('pie', {
+	  colours: function() {
+		return ["#ffffff", this.getAttribute("data-colour")]
+	  },
+	  diameter: function() {
+		return this.getAttribute("data-diameter")
+	  }
+	});	
 }		
    
 function pad2(number) {
