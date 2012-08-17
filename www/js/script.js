@@ -178,14 +178,14 @@ function showInfo(data, tabletop) {
 
 
 function filtergames(){
-	//$("#sel-runs").val();
-	//$("#sel-ha").val();
-	//$("#sel-dn").val();
 
- //regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
+	//hide the win total
+	$('#alltime-score dl').hide();
+	
+	//regularseason has date, mm, dd, yyyy, dbl, ha, opp, res, soxscor, oppscor, extr, wpit, lpit, spit, spec, time, dn
  	//first shaw all the games
    	$('.game').show();
-   		//runs?
+   	//runs?
 	   if ($('#sel-runs').val() === 'all') { 
 			// do nothing!
 		} else {
@@ -193,38 +193,42 @@ function filtergames(){
 			// sel runs values are shut one and blow
 			 $('[data-'+$('#sel-runs').val()+'="0"]').hide();
 		}
-		//Home or away?
+	//Home or away?
 		if ($('#sel-ha').val() === 'all') {
 			//do nothing!
 		} else {
 			// hide if the selection (Vs/At) does not match 
 			 $('.game:not([data-ha="'+ $('#sel-ha').val()+'"])').hide();
 		}
-		//is it day/night?
+	//is it day/night?
 		if ($('#sel-dn').val() === 'all') {
 			//do nothing! Show all
 		} else {
 			//hide unmatch
 			 $('.game:not([data-dn="'+ $('#sel-dn').val()+'"])').hide();
 		}
-		//SELECTED YEAR change this to range
+	//SELECTED YEAR change this to range
 		if ($('#sel-year').val() === 'all') {
 			//do nothing!
 		} else {
 			 $('.game:not([data-year="'+ $('#sel-year').val()+'"])').hide();
 		}
-		//SELECTED month change this to range
+	//SELECTED month change this to range
 		if ($('#sel-mm').val() === 'all') {
 			//do nothing!
 		} else {
 			 $('.game:not([data-mm="'+ $('#sel-mm').val()+'"])').hide();
 		}	
-		//Playoff?
+	//Playoff?
 		if ($('#sel-playoff').val() === 'all') {
-			//do nothing!
+		//do nothing!
 		} else {
 			 $('.game:not([data-playoff="'+ $('#sel-playoff').val()+'"])').hide();
 		}	
+		
+	//slowly reveal the all time score
+	$('#alltime-score dl').fadeIn('slow');
+	
 }
 
 
