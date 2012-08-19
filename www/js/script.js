@@ -41,10 +41,38 @@ function showInfo(data, tabletop) {
 
 	for(i = 0; i < data.length; i++) {
         
-		//counting
-		//if (data[i].res==="W") {countw++; } //console.log(countw);
-		//if (data[i].res==="L") {countl++; } //console.log(countl)
-		//if (data[i].res==="T") {countt++; } //console.log(countt)
+        
+        /* desired output -- underscore template style - still working
+        <div class="game <% print(data[i].res +' y'+ data[i].yyyy +' '+ data[i].ha +' '+ data[i].dn) %>" 
+        	data-res="<%= data[i].res %>" 
+        	data-year="2012" 
+        	data-playoff="0" 
+        	data-mm="8" 
+        	data-dd="17" 
+        	data-dbl="0" 
+        	data-soxscor="4" 
+        	data-oppscor="6" 
+        	data-rundiff="-2" 
+        	data-shut="<%" 
+        	data-blow="0" 
+        	data-one="0" 
+        	data-ha="At" 
+        	data-hometeam="New York" 
+        	data-wpit="Hughes" 
+        	data-lpit="Morales" 
+        	data-spit="Soriano" 
+        	data-spec="49,422" 
+        	data-time="2:49:00" 
+        	data-dn="night">
+        		<div class="gamedate">
+        			<a href="http://www.baseball-reference.com/boxes/BOS/BOS201208170.shtml" target="_blank">Aug 17, 2012</a></div>
+        		<div class="gamescore">
+        			<span class="bos">BOS 4</span>-<span class="ny">NY 6</span>
+        		</div>
+        </div>
+        */
+        
+
 
 		html += '<div class="game ' + data[i].res +' y'+ data[i].yyyy +' '+ data[i].ha +' '+ data[i].dn +'"';
 

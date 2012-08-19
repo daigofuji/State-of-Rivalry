@@ -234,8 +234,8 @@
 			<option value="8">Aug.</option>
 			<option value="9">Sept.</option>
 			<option value="10">Oct.</option>
-			<option value="11">Nov.</option>
-			<!-- <option value="12">Dec</option> -->
+			<!-- <option value="11">Nov.</option>
+			<option value="12">Dec</option> -->
 		</select>
 		Playoff games: 
 		<select name="playoff" id="sel-playoff" class="filter">
