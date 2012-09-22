@@ -1,0 +1,127 @@
+  <script id='tmpl-books' type='text/template'>
+  <ul>
+    <% for (var i = 0; i < data.length; i++) { %>
+      <% var game = data[i]; %>
+
+/*date	playoff	mm	dd	yyyy	dbl	HA	OPP	RES	SOXSCOR	OPPSCOR	EXTR	WPIT	LPIT	SPIT	SPEC	TIME	DN*/
+
+       // desired output -- underscore template style - still working
+        <div class="game <%= game.res %> y<%= game.yyyy %>  <%= game.ha %> <%= game.dn %>" 
+        	data-res="<%= game.res %>" 
+        	data-year="<%= game.yyyy %>" 
+        	data-playoff="<%= game.playoff %>" 
+        	data-mm="<%= game.mm %>" 
+        	data-dd="<%= game.dd %>" 
+        	data-dbl="<%= game.dbl %>" 
+        	data-soxscor="<%= game.soxscor %>" 
+        	data-oppscor="<%= game.oppscor %>" 
+        	data-rundiff="<% print(game.soxscor - game.oppscor) %>" 
+        	data-shut="<% if(game.soxscor == 0 || game.oppscor == 0) { print('1'}; } else { print('0'} } %>" 
+        	data-blow="<%= game.res %>" 
+        	data-one="<%= game.res %>" 
+        	data-ha="<%= game.res %>" 
+        	data-hometeam="<%= game.res %>" 
+        	data-wpit="<%= game.res %>" 
+        	data-lpit="<%= game.res %>" 
+        	data-spit="<%= game.res %>" 
+        	data-spec="<%= game.res %>" 
+        	data-time="<%= game.res %>" 
+        	data-dn="<%= game.res %>">
+        		<div class="gamedate">
+        			<a href="http://www.baseball-reference.com/boxes/BOS/BOS201208170.shtml" target="_blank">Aug 17, 2012<%= game.res %></a></div>
+        		<div class="gamescore">
+        			<span class="bos">BOS 4</span>-<span class="ny">NY 6</span>
+        		</div>
+        </div>
+        */
+
+      <li>
+        <em><%= game.title %></em> by <%= book.author %>
+      </li>
+    <% } %>
+  </ul>
+</script>
+
+
+
+/*		//shutouts?
+		if(game.soxscor == 0 || game.oppscor == 0) { print('data-shut="1"'); } else {print('data-shut="0"'); }
+		//blowouts?
+		if(game.soxscor - game.oppscor > 4 || game.soxscor - game.oppscor < -4) { print('data-blow="1"'); } else {print('data-blow="0"'); }
+		//one run?
+		if(game.soxscor - game.oppscor == 1 || game.soxscor - game.oppscor == -1) { print('data-one="1"'); } else {print('data-one="0"'); }
+
+		
+		
+		print('data-ha="' + game.ha + '"');
+		//
+		if(game.ha === "Vs") {print('data-hometeam="Boston"'); }
+			else if (game.ha === "At") {print('data-hometeam="New York")'; }
+				else  {print('data-hometeam="N/A"'); }
+		if(game.wpit) { print('data-wpit="' + game.wpit + '"'); } else {print('data-wpit="N/A"'; }
+		if(game.lpit) { print('data-lpit="' + game.lpit + '"'); } else {print('data-lpit="N/A"'; }
+		if(game.spit) { print('data-spit="' + game.spit + '"'); } else {print('data-spit="-"'; }
+		if(game.spec) { print('data-spec="' + number_format(game.spec) + '"'); } else {print('data-spec="N/A"'; }
+		if(game.time) { print('data-time=")' + game.time + '"'; } else {print('data-time="N/A"'); }
+		if(game.dn) { print('data-dn="' + game.dn + '"'); } else {print('data-dn="N/A"'); }
+		
+		
+		print('>'; // end beginning of div
+		print('<div class="gamedate">';
+
+		//link to retrosheet 
+		//wait, retrosheet only does past year, current year, send it to baseball-reference
+		if (game.yyyy === "2012") {
+				print('<a href="http://www.baseball-reference.com/boxes/';
+					if(game.ha === "Vs") {print('NYA/NYA';}else {print('BOS/BOS';}
+					print(game.yyyy + pad2(game.mm) + pad2(game.dd) + game.dbl + '.shtml';
+				print('" target ="_blank">';
+		}else {		
+		//by default, links to retrosheet	
+			print('<a href="http://www.retrosheet.org/boxesetc/' + game.yyyy +'/'
+			;
+			//before 1917 redirect to game page
+				if(game.yyyy < 1918){
+					print(pad2(game.mm) + pad2(game.dd) + game.yyyy + '.htm'; 
+				} else {
+			//boxscore page
+					print('B' + pad2(game.mm) + pad2(game.dd) + game.dbl;
+					if(game.ha === 'Vs') {print('BOS';} else {print('NYA';}
+					print(game.yyyy + '.htm';
+				}
+			print('" target ="_blank">';
+			//end link to retrosheet
+		
+		}// end link to retrosheet or baseball-reference
+			
+		//covert month name
+		switch (game.mm) {
+			case '1' : print('Jan '; break;
+			case '2' : print('Feb '; break;
+			case '3' : print('Mar '; break;
+			case '4' : print('Apr '; break;
+			case '5' : print('May '; break;
+			case '6' : print('Jun '; break;
+			case '7' : print('Jul '; break;
+			case '8' : print('Aug '; break;
+			case '9' : print('Sept '; break;
+			case '10' : print('Oct '; break;
+			case '11' : print('Nov '; break;
+			case '12' : print('Dec ';
+		}	
+		
+		
+		
+		print(game.dd + ', ' + game.yyyy +'</a></div>'; // end game date
+
+		print('<div class="gamescore"><span class="bos">BOS ' + game.soxscor +'</span>-<span class="ny">NY '+ game.oppscor  + '</span>'; 
+		//if extra innings 
+		if (game.extr){ print(' <span class="extra">(' + game.extr + ')</span>';}
+		
+		print('</div>'; //end game score
+
+
+		html = html + "</div>";
+		// ending game div here
+		
+		*/
