@@ -86,50 +86,15 @@ function showInfo(data, tabletop) {
 		html += '>'; // end beginning of div
 		html += '<div class="gamedate">';
 
-		//link to retrosheet 
-		//wait, retrosheet only does past year, current year, send it to baseball-reference
-		if (data[i].yyyy === "2012") {
-				html += '<a href="http://www.baseball-reference.com/boxes/';
-					if(data[i].ha === "Vs") {html += 'NYA/NYA';}else {html += 'BOS/BOS';}
-					html += data[i].yyyy + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl + '.shtml';
-				html += '" target ="_blank">';
-		}else {		
-		//by default, links to retrosheet	
-			html += '<a href="http://www.retrosheet.org/boxesetc/' + data[i].yyyy +'/'
-			;
-			//before 1917 redirect to game page
-				if(data[i].yyyy < 1918){
-					html += pad2(data[i].mm) + pad2(data[i].dd) + data[i].yyyy + '.htm'; 
-				} else {
-			//boxscore page
-					html += 'B' + pad2(data[i].mm) + pad2(data[i].dd) + data[i].dbl;
-					if(data[i].ha === 'Vs') {html += 'BOS';} else {html += 'NYA';}
-					html += data[i].yyyy + '.htm';
-				}
-			html += '" target ="_blank">';
-			//end link to retrosheet
+		html += '<a target ="_blank" href="';
+
+		html += get_box_url(data[i].yyyy, data[i].mm, data[i].dd, data[i].ha, data[i].dbl);
 		
-		}// end link to retrosheet or baseball-reference
-			
-		//covert month name
-		switch (data[i].mm) {
-			case '1' : html += 'Jan '; break;
-			case '2' : html += 'Feb '; break;
-			case '3' : html += 'Mar '; break;
-			case '4' : html += 'Apr '; break;
-			case '5' : html += 'May '; break;
-			case '6' : html += 'Jun '; break;
-			case '7' : html += 'Jul '; break;
-			case '8' : html += 'Aug '; break;
-			case '9' : html += 'Sept '; break;
-			case '10' : html += 'Oct '; break;
-			case '11' : html += 'Nov '; break;
-			case '12' : html += 'Dec ';
-		}	
+		html += '">';
+
 		
 		
-		
-		html += data[i].dd + ', ' + data[i].yyyy +'</a></div>'; // end game date
+		html += spell_month(data[i].mm) + ' ' + data[i].dd + ', ' + data[i].yyyy +'</a></div>'; // end game date
 
 		html += '<div class="gamescore"><span class="bos">BOS ' + data[i].soxscor +'</span>-<span class="ny">NY '+ data[i].oppscor  + '</span>'; 
 		//if extra innings 
@@ -141,12 +106,10 @@ function showInfo(data, tabletop) {
 		html = html + "</div>";
 		// ending game div here
 		}
+
 		div.innerHTML = div.innerHTML + html;
 
-		//$('#ny_total').html(number_format(countl));
-		//$('#bos_total').html(number_format(countw));
-		//$('#tie_total').html(number_format(countt));
-			countwinloss();
+		countwinloss();
 
 		//enable tooltip 
 		$(".game").hover( function () {
@@ -262,6 +225,46 @@ function pad2(number) {
 	return (number < 10 ? '0' : '') + number;
 }
 
+function spell_month(month) {
+		switch (month) {
+			case '1' : return 'Jan'; break;
+			case '2' : return 'Feb'; break;
+			case '3' : return 'Mar'; break;
+			case '4' : return 'Apr'; break;
+			case '5' : return 'May'; break;
+			case '6' : return 'Jun'; break;
+			case '7' : return 'Jul'; break;
+			case '8' : return 'Aug'; break;
+			case '9' : return 'Sept'; break;
+			case '10' : return 'Oct'; break;
+			case '11' : return 'Nov'; break;
+			case '12' : return 'Dec';
+		}
+}
+
+function get_box_url(yyyy, mm, dd, ha, dbl){
+	var boxurl = "";
+	//If it is the current year, retrosheet URL is not available, so URL to baseball-reference
+		//http://www.baseball-reference.com/boxes/BOS/BOS201209130.sboxurl
+		if (yyyy === "2012") {
+				boxurl += 'http://www.baseball-reference.com/boxes/';
+					if(ha === "At") {boxurl += 'NYA/NYA';}else {boxurl += 'BOS/BOS';}
+					boxurl += yyyy + pad2(mm) + pad2(dd) + dbl + '.shtml';
+		}else {		
+		//by default, links to retrosheet	
+			boxurl += 'http://www.retrosheet.org/boxesetc/' + yyyy +'/';
+			//before 1917 redirect to game page
+				if(yyyy < 1918){
+					boxurl += pad2(mm) + pad2(dd) + yyyy + '.htm'; 
+				} else {
+			//boxscore page
+					boxurl += 'B' + pad2(mm) + pad2(dd) + dbl;
+					if(ha === 'Vs') {boxurl += 'BOS';} else {boxurl += 'NYA';}
+					boxurl += yyyy + '.htm';
+				}//end link to retrosheet	
+	}// end link to retrosheet or baseball-reference
+	return boxurl;
+}
 
 function number_format (number, decimals, dec_point, thousands_sep) {
     // https://raw.github.com/kvz/phpjs/master/functions/strings/number_format.js

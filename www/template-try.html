@@ -6,8 +6,8 @@
 /*date	playoff	mm	dd	yyyy	dbl	HA	OPP	RES	SOXSCOR	OPPSCOR	EXTR	WPIT	LPIT	SPIT	SPEC	TIME	DN*/
 
        // desired output -- underscore template style - still working
-        <div class="game <%= game.res %> y<%= game.yyyy %>  <%= game.ha %> <%= game.dn %>" 
-        	data-res=	"<%= game.res %>" 
+        <div class=		"game <%= game.res %> y<%= game.yyyy %>  <%= game.ha %> <%= game.dn %>" 
+        	data-res=		"<%= game.res %>" 
         	data-year=	"<%= game.yyyy %>" 
         	data-playoff="<%= game.playoff %>" 
         	data-mm=	"<%= game.mm %>" 
@@ -21,25 +21,20 @@
         	data-one=	"<% if(game.soxscor - game.oppscor == 1 || game.soxscor - game.oppscor == -1) { print('1'); } else {print('0'); } %>" 
         	data-ha=	"<%= game.ha %>" 
         	data-hometeam="<% if(game.ha === 'Vs') {print('Boston'); }
-			else if (game.ha === 'At') {print('New York'); }
-				else  {print('N/A'); } %>" 
+						else if (game.ha === 'At') {print('New York'); }
+							else  {print('N/A'); } %>" 
 
-				
-		
-		
-		
-		
-		
         	data-wpit=	"<% if(game.wpit) { print(game.wpit); } else { print('N/A'); } %>" 
         	data-lpit=	"<% if(game.lpit) { print(game.lpit); } else { print('N/A'); } %>" 
         	data-spit=	"<% if(game.spit) { print(game.spit); } else { print('-'); } %>" 
         	data-spec=	"<% if(game.spec) { print(number_format(game.spec)); } else { print('N/A'); } %>" 
         	data-time=	"<% if(game.time) { print(game.time); } else { print('N/A'); } %>" 
         	data-dn=	"<% if(game.dn) { print(game.dn); } else {print('N/A'); } %>">
-        		<div class="gamedate">
-        			<a href="http://www.baseball-reference.com/boxes/BOS/BOS201208170.shtml
-
-        			" target="_blank">
+ 
+ 					<div class="gamedate">
+        			
+        			<a target="_blank"　
+        				href="" >
         				Aug 17, 2012<%= game.res %>
         			</a>
         		</div>
