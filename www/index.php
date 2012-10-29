@@ -54,7 +54,7 @@
 			}
 		?>
 		</div>
-  <p class="note"><strong>Note:</strong> Thanks for visiting! This site is still work in progress. If you are using this for reference, always double check the data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a>, gathered from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day 2012</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a>. Thank you.</p>
+  <p class="note"><strong>Note:</strong> Thanks for visiting! This site is still work in progress (though it is functional and data is up to date). If you are using this for reference, always double check the data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a>, gathered from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day 2012</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a>. Thank you.</p>
 	
 	<h2>All-time win-loss record <em>(<span class="smaller">Total number of games:</span> <span id="game_total">..</span>)</em></h2>
 	<h3 id="loading"><br/><img src="img/ajax-loader.gif" width="220" height="19" /><br/>Loading over 2,000 game data... (Thanks for your patience!)<br/></h3>

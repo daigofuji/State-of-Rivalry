@@ -1,17 +1,17 @@
- $(document).ready(function() {
-		getgames();
+$(document).ready(function() {
+	getgames();
 });
 
-      var a;
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&output=htm';
+var a;
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&output=htm';
 
-      function getgames() {
-        a = Tabletop({
-            key: public_spreadsheet_url,
-            callback: showInfo,
-            simpleSheet: true
-        });
-      }
+function getgames() {
+    a = Tabletop({
+        key: public_spreadsheet_url,
+        callback: showInfo,
+        simpleSheet: true
+    });
+ }
 
       var count = 0;
 
@@ -92,6 +92,6 @@
         div.innerHTML = div.innerHTML + html;
       }
       
-      	function pad2(number) {
-			return (number < 10 ? '0' : '') + number
-		}
+    function pad2(number) {
+		return (number < 10 ? '0' : '') + number
+	}
