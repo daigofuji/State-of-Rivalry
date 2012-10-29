@@ -1,3 +1,8 @@
+/* 
+Not so sure what this file is.
+Assuming this is created  as a practice (thus the name) and not used in the app.
+*/
+
 var countries_data = {
    "properties": {
     "name": {"type": "string", "unique": true },
