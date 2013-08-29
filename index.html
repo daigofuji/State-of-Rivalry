@@ -32,27 +32,12 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
   	<div class="wrap">
-		<?php include 'lib/header.html'; ?>
+		<h1 id="logo"><img src="img/StateofRivalry.png" title="State of Rivalry: New York vs. Boston" alt="StateofRivalry"></h1>	
 	</div>
   </header>
   <div role="main" class="wrap">
   		<div class="debug" style="color:#ccc;">
-		<?php 
-		// Data caching but may not have to use... we are switching to google doc-table top model
-		
-		// is my cached datafile there? and new? 86400 is 24 hours
-		if ( file_exists('data/rivalry.js') && filemtime('data/rivalry.js') > (time()-30)) {
-		   //   if there is a cached version read content and display
-			?><!-- Debug: Cache file is there --><?php
-			} else {
-			?><!-- Debug: Cache file is not there and/or old at <?php echo  filemtime('data/rivalry.js'); ?>. Creating new. -->
-			<?php
-				echo "<!-- ";
-				// so run the php to write that file
-				 include 'get_data.php';
-				echo "-->";
-			}
-		?>
+
 		</div>
   <p class="note"><strong>Note:</strong> Thanks for visiting! This site is still work in progress (though it is functional and data is up to date). If you are using this for reference, always double check the data in <a href="https://docs.google.com/a/daigofujiwara.com/spreadsheet/pub?key=0Apvvlouo3eMgdHhDWF9vTThTODlxRnFMMWVjd09GdWc&amp;single=true&amp;gid=0&amp;output=html">Google Doc</a>, gathered from <a href="http://www.retrosheet.org/">retrosheet</a>. A <a href="http://baseballhackday.com/">Boston Baseball Hack Day 2012</a> project. Contribute via <a href="https://github.com/daigofuji/State-of-Rivalry">GitHub</a> & <a href="mailto:daigo@daigofujiwara.com">report errors</a>. Thank you.</p>
 	
@@ -312,7 +297,9 @@
 
   <footer>
  	<div class="wrap">
-		<?php include 'lib/footer.html'; ?>
+		<p>A project out of <a href="http://baseballhackday.com/">2012 Baseball Hack Day</a>. Created by a team of <a href="http://www.stattleship.com/">David Thyresson</a>, <a href="http://www.tgirat.com/">Tom Giratikanon</a>, <a href="http://about.me/daigofujiwara">Daigo Fujiwara</a> and <a href="http://www.behance.net/takashi_graphics">Takashi Seki</a>.</p>
+
+		<p>Powered by <a href="http://www.stattleship.com/" class="" title="Stattleship.com"> <img src="img/statleship_logo_three_sports_small.png" width="238" height="47" alt="statleship_logo_three_sports_small"></a>& <a href="http://www.retrosheet.org/">retrosheet</a>.</p>
   	</div>
 
   </footer>
